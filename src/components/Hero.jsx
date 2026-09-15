@@ -576,11 +576,11 @@ const Hero = () => {
               <span
                 className="
                   absolute
-                  -bottom-2
+                  top-12
                   left-1/2
 
                   h-[3px]
-                  w-[65%]
+                  w-[62%]
 
                   -translate-x-1/2
 
