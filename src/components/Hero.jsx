@@ -899,14 +899,16 @@ const Hero = () => {
       hover:!text-white
       hover:!no-underline
 
-      dark:!border-white/20
-      dark:!bg-[#17263a]
-      dark:!text-white
+      
+      dark:!border-[#4ea5ff]/25
+      dark:!bg-[#0A66C2]/15
+      dark:!text-[#70baff]
       dark:shadow-none
 
-      dark:hover:!border-white
-      dark:hover:!bg-white
-      dark:hover:!text-[#071b3b]
+      
+      dark:hover:!border-[#0A66C2]
+      dark:hover:!bg-[#0A66C2]
+      dark:hover:!text-white
 
       sm:h-10
       sm:w-10
