@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+}
+
+/* ==================================================
+   SMART DIRECTION-AWARE SECTION REVEAL
+================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.smart-reveal {
+  position: relative;
+  width: 100%;
+  perspective: 1400px;
+}
+
+
+/* ==================================================
+   BASE CONTENT
+================================================== */
+
+.smart-reveal-content {
+  position: relative;
+
+  opacity: 0.18;
+
+  filter: blur(8px);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1.3s ease,
+    filter 1.45s ease;
+
+  transition-delay: var(--reveal-delay, 0ms);
+
+  will-change: transform, opacity, filter;
+}
+
+
+/* ==================================================
+   SCROLLING DOWN
+   Section bottom se enter kare
+================================================== */
+
+.smart-reveal-from-bottom .smart-reveal-content {
+  transform:
+    perspective(1400px)
+    translateY(75px)
+    rotateX(7deg)
+    scale(0.955);
+
+  transform-origin: center bottom;
+}
+
+
+/* ==================================================
+   SCROLLING UP / BACK
+   Section top se enter kare
+================================================== */
+
+.smart-reveal-from-top .smart-reveal-content {
+  transform:
+    perspective(1400px)
+    translateY(-75px)
+    rotateX(-7deg)
+    scale(0.955);
+
+  transform-origin: center top;
+}
+
+
+/* ==================================================
+   VISIBLE
+================================================== */
+
+.smart-reveal-show .smart-reveal-content {
+  opacity: 1;
+
+  filter: blur(0);
+
+  transform:
+    perspective(1400px)
+    translateY(0)
+    rotateX(0deg)
+    scale(1);
+}
+
+
+/* ==================================================
+   SMALL DEPTH EFFECT
+================================================== */
+
+.smart-reveal-show .smart-reveal-content {
+  animation:
+    revealDepth
+    1.6s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms);
+}
+
+
+@keyframes revealDepth {
+  0% {
+    box-shadow:
+      0 0 0 rgba(8, 119, 249, 0);
+  }
+
+  55% {
+    box-shadow:
+      0 25px 70px rgba(8, 119, 249, 0.055);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 rgba(8, 119, 249, 0);
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 767px) {
+  .smart-reveal {
+    perspective: 900px;
+  }
+
+  .smart-reveal-content {
+    opacity: 0.2;
+
+    filter: blur(5px);
+
+    transition:
+      transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 1.25s ease,
+      filter 1.35s ease;
+
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .smart-reveal-from-bottom .smart-reveal-content {
+    transform:
+      translateY(52px)
+      scale(0.97);
+  }
+
+  .smart-reveal-from-top .smart-reveal-content {
+    transform:
+      translateY(-52px)
+      scale(0.97);
+  }
+
+  .smart-reveal-show .smart-reveal-content {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .smart-reveal-content,
+  .smart-reveal-from-bottom .smart-reveal-content,
+  .smart-reveal-from-top .smart-reveal-content,
+  .smart-reveal-show .smart-reveal-content {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+}
