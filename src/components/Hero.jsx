@@ -576,7 +576,7 @@ const Hero = () => {
               <span
                 className="
                   absolute
-                  top-12
+                  -bottom-1
                   left-1/2
 
                   h-[3px]
@@ -595,8 +595,9 @@ const Hero = () => {
                   dark:via-cyan-400
                   dark:to-blue-400
 
-                  lg:left-0
+                  lg:left-4
                   lg:translate-x-0
+                  sm:top-12
                 "
               />
             </span>
