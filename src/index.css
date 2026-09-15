@@ -279,3 +279,320 @@ body {
 html.dark body {
   background: #06111f;
 }
+
+/* =========================================================
+   GLOBAL DARK MODE — COMPLETE PORTFOLIO
+========================================================= */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  transition: background-color 0.35s ease;
+}
+
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+html.dark,
+html.dark body {
+  background-color: #06111f !important;
+  color: #f8fafc;
+  color-scheme: dark;
+}
+
+
+/* =========================
+   WHITE CARDS
+========================= */
+
+html.dark .bg-white {
+  background-color: #0c1b2e !important;
+}
+
+
+/* white transparent cards */
+html.dark [class*="bg-white/"] {
+  background-color: rgba(12, 27, 46, 0.88) !important;
+}
+
+
+/* =========================
+   LIGHT SECTION BACKGROUNDS
+========================= */
+
+html.dark [class~="bg-[#f8fbff]"],
+html.dark [class~="bg-[#f9fcff]"],
+html.dark [class~="bg-[#f7fbff]"],
+html.dark [class~="bg-[#f5faff]"],
+html.dark [class~="bg-[#f4f9ff]"],
+html.dark [class~="bg-[#eef6ff]"],
+html.dark [class~="bg-[#eef7ff]"] {
+  background-color: #071321 !important;
+}
+
+
+/* =========================
+   LIGHT BLUE SMALL BOXES
+========================= */
+
+html.dark [class~="bg-blue-50"],
+html.dark [class~="bg-blue-100"] {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* =========================
+   MAIN DARK TEXT → WHITE
+========================= */
+
+html.dark [class~="text-[#071b3b]"] {
+  color: #f8fafc !important;
+}
+
+html.dark [class~="text-[#34445f]"],
+html.dark [class~="text-[#29405f]"] {
+  color: #cbd5e1 !important;
+}
+
+
+/* =========================
+   PARAGRAPH TEXT
+========================= */
+
+html.dark .text-slate-600 {
+  color: #a8b5c7 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-400 {
+  color: #8291a7 !important;
+}
+
+html.dark .text-slate-300 {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================
+   BLUE TEXT
+========================= */
+
+html.dark [class~="text-[#0877f9]"] {
+  color: #58c7ff !important;
+}
+
+html.dark [class~="text-[#0a4a98]"] {
+  color: #7bc9ff !important;
+}
+
+
+/* =========================
+   CARD BORDERS
+========================= */
+
+html.dark .border-blue-100,
+html.dark .border-blue-200 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* =========================
+   SHADOWS
+========================= */
+
+html.dark [class*="shadow-blue-"] {
+  --tw-shadow-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+html.dark article,
+html.dark .group {
+  --tw-shadow-color: rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+html.dark #home {
+  background: linear-gradient(
+    135deg,
+    #06111f 0%,
+    #071829 50%,
+    #09233d 100%
+  ) !important;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+html.dark #about {
+  background-color: #06111f !important;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+html.dark #skills {
+  background-color: #071321 !important;
+}
+
+html.dark #skills article {
+  background-color: #0c1b2e !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+
+/* skill tags */
+html.dark #skills article span[class*="bg-[#f5faff]"] {
+  background-color: rgba(255, 255, 255, 0.045) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+html.dark #projects {
+  background-color: #06111f !important;
+}
+
+html.dark #projects article {
+  background-color: #0c1b2e !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+
+/* image container */
+html.dark #projects article [class~="bg-[#eef6ff]"] {
+  background-color: #091827 !important;
+}
+
+
+/* tech badges */
+html.dark #projects article [class~="bg-[#f4f9ff]"],
+html.dark #projects article [class~="bg-[#e3f1ff]"] {
+  background-color: rgba(8, 119, 249, 0.12) !important;
+  border-color: rgba(88, 199, 255, 0.15) !important;
+  color: #70ceff !important;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+html.dark #experience {
+  background-color: #071321 !important;
+}
+
+html.dark #experience article {
+  background-color: #0c1b2e !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+html.dark #services {
+  background-color: #06111f !important;
+}
+
+html.dark #services article {
+  background-color: #0c1b2e !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+html.dark header > div {
+  background-color: rgba(7, 19, 33, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* =========================
+   OFFCANVAS MOBILE MENU
+========================= */
+
+html.dark .offcanvas {
+  background-color: #071321 !important;
+  color: white !important;
+}
+
+html.dark .offcanvas-header,
+html.dark .offcanvas-body {
+  background-color: #071321 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .btn-close {
+  filter: invert(1);
+}
+
+
+/* =========================
+   INPUT / BUTTON-LIKE WHITE BOXES
+========================= */
+
+html.dark button[class*="bg-white"],
+html.dark a[class*="bg-white"] {
+  background-color: #0d1e32 !important;
+}
+
+
+/* =========================
+   HOVER EFFECTS
+========================= */
+
+html.dark article:hover {
+  border-color: rgba(88, 199, 255, 0.35) !important;
+}
+
+html.dark a:hover {
+  text-decoration: none !important;
+}
+
+
+/* =========================
+   SMOOTH THEME SWITCH
+========================= */
+
+section,
+article,
+nav,
+header > div,
+.offcanvas,
+[class*="rounded-"] {
+  transition-property:
+    background-color,
+    border-color,
+    color,
+    box-shadow,
+    transform;
+}
