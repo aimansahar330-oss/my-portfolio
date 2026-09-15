@@ -192,3 +192,69 @@ body {
     animation: none;
   }
 }
+
+
+/* ===============================
+   PORTFOLIO PRELOADER
+================================ */
+
+.loader-logo {
+  animation: loaderLogo 2s ease-in-out infinite;
+}
+
+@keyframes loaderLogo {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 28px 70px rgba(56, 189, 248, 0.25);
+  }
+}
+
+
+/* 5 SECOND PROGRESS */
+.loader-bar {
+  width: 0%;
+  animation: loaderProgress 5s linear forwards;
+}
+
+@keyframes loaderProgress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+/* DOTS */
+.loader-dot {
+  animation: loaderDot 1.2s ease-in-out infinite;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes loaderDot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}

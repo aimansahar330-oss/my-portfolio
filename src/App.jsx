@@ -9,8 +9,32 @@ import WhatsAppCTA from "./components/WhatsAppCTA";
 import Footer from "./components/Footer";
 
 import SpectacleReveal from "./components/SpectacleReveal";
+import Loader from "./components/Loader";
 
 const App = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // LOADER KE DAURAN SCROLL BAND
+    document.body.style.overflow = "hidden";
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+
+      document.body.style.overflow = "auto";
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <Navbar />
