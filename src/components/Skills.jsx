@@ -36,10 +36,7 @@ const skillGroups = [
     title: "Database",
     description:
       "Structured and reliable data management for modern web applications.",
-    skills: [
-      "MongoDB",
-      "PostgreSQL",
-    ],
+    skills: ["MongoDB", "PostgreSQL"],
   },
 
   {
@@ -81,13 +78,24 @@ const Skills = () => {
       className="
         relative
         overflow-hidden
-        bg-[#f8fbff]
+
+        !bg-[#f8fbff]
+
         py-14
+
+        transition-colors
+        duration-500
+
+        dark:!bg-[#071321]
+
         sm:py-16
         lg:py-20
       "
     >
+      {/* ================================================= */}
       {/* BACKGROUND DECORATION */}
+      {/* ================================================= */}
+
       <div
         className="
           absolute
@@ -96,8 +104,12 @@ const Skills = () => {
           h-[320px]
           w-[320px]
           rounded-full
-          bg-blue-200/30
+
+          !bg-blue-200/30
+
           blur-[100px]
+
+          dark:!bg-[#0877f9]/10
         "
       />
 
@@ -109,24 +121,34 @@ const Skills = () => {
           h-[280px]
           w-[280px]
           rounded-full
-          bg-cyan-100/40
+
+          !bg-cyan-100/40
+
           blur-[90px]
+
+          dark:!bg-cyan-400/[0.07]
         "
       />
 
+      {/* ================================================= */}
       {/* MAIN CONTAINER */}
+      {/* ================================================= */}
+
       <div
         className="
           relative
           mx-auto
           w-full
           max-w-[1180px]
+
           px-4
           sm:px-6
           lg:px-8
         "
       >
-        {/* ================= HEADER ================= */}
+        {/* ================================================= */}
+        {/* HEADER */}
+        {/* ================================================= */}
 
         <div
           className="
@@ -134,13 +156,13 @@ const Skills = () => {
             flex
             flex-col
             gap-3
+
             lg:mb-10
             lg:flex-row
             lg:items-end
             lg:justify-between
           "
         >
-          {/* LEFT */}
           <div>
             {/* LABEL */}
             <div
@@ -149,23 +171,45 @@ const Skills = () => {
                 inline-flex
                 items-center
                 gap-2
+
                 rounded-full
                 border
-                border-blue-200
-                bg-white
+
+                !border-blue-200
+                !bg-white
+
                 px-3
                 py-1.5
+
                 shadow-sm
+
+                dark:!border-white/10
+                dark:!bg-white/[0.05]
+                dark:shadow-none
               "
             >
-              <span className="h-2 w-2 rounded-full bg-[#0877f9]" />
+              <span
+                className="
+                  h-2
+                  w-2
+                  rounded-full
+
+                  !bg-[#0877f9]
+
+                  dark:!bg-[#58c7ff]
+                "
+              />
 
               <span
                 className="
                   text-[9px]
                   font-black
                   tracking-[0.18em]
-                  text-[#0877f9]
+
+                  !text-[#0877f9]
+
+                  dark:!text-[#58c7ff]
+
                   sm:text-[10px]
                 "
               >
@@ -177,29 +221,48 @@ const Skills = () => {
             <h2
               className="
                 m-0
+
                 text-[28px]
                 font-black
                 tracking-[-0.04em]
-                text-[#071b3b]
+
+                !text-[#071b3b]
+
+                dark:!text-[#f8fafc]
+
                 sm:text-[34px]
                 lg:text-[38px]
               "
             >
               Technologies I Use To
-              <span className="text-[#0877f9]"> Build</span>
+              <span
+                className="
+                  !text-[#0877f9]
+                  dark:!text-[#58c7ff]
+                "
+              >
+                {" "}
+                Build
+              </span>
             </h2>
           </div>
 
-          {/* RIGHT DESCRIPTION */}
+          {/* DESCRIPTION */}
           <p
             className="
               m-0
               max-w-[430px]
+
               text-[11px]
               leading-5
-              text-slate-500
+
+              !text-slate-500
+
+              dark:!text-[#94a3b8]
+
               sm:text-[12px]
               sm:leading-6
+
               lg:text-right
             "
           >
@@ -209,13 +272,16 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* ================= BENTO GRID ================= */}
+        {/* ================================================= */}
+        {/* BENTO GRID */}
+        {/* ================================================= */}
 
         <div
           className="
             grid
             grid-cols-1
             gap-4
+
             md:grid-cols-2
             lg:grid-cols-6
           "
@@ -242,39 +308,58 @@ const Skills = () => {
                   group
                   relative
                   overflow-hidden
+
                   rounded-[20px]
                   border
-                  border-blue-100
-                  bg-white
+
+                  !border-blue-100
+                  !bg-white
+
                   p-5
+
                   shadow-[0_8px_30px_rgba(7,27,59,0.04)]
+
                   transition-all
                   duration-300
 
                   hover:-translate-y-1
-                  hover:border-blue-300
+                  hover:!border-blue-300
                   hover:shadow-[0_18px_40px_rgba(8,119,249,0.10)]
+
+                  dark:!border-white/10
+                  dark:!bg-[#0c1b2e]
+                  dark:shadow-[0_10px_35px_rgba(0,0,0,.18)]
+
+                  dark:hover:!border-[#58c7ff]/30
+                  dark:hover:shadow-[0_18px_45px_rgba(8,119,249,.10)]
 
                   sm:p-6
 
                   ${cardLayout}
                 `}
               >
-                {/* BACKGROUND CIRCLE */}
+                {/* BACKGROUND DECORATION */}
                 <div
                   className="
                     absolute
                     -right-12
                     -top-12
+
                     h-28
                     w-28
+
                     rounded-full
-                    bg-[#0877f9]/5
+
+                    !bg-[#0877f9]/5
+
                     transition-all
                     duration-500
 
                     group-hover:scale-150
-                    group-hover:bg-[#0877f9]/10
+                    group-hover:!bg-[#0877f9]/10
+
+                    dark:!bg-[#58c7ff]/[0.04]
+                    dark:group-hover:!bg-[#58c7ff]/[0.08]
                   "
                 />
 
@@ -284,24 +369,30 @@ const Skills = () => {
                     absolute
                     right-5
                     top-4
+
                     text-[34px]
                     font-black
                     tracking-[-0.06em]
-                    text-[#071b3b]/[0.045]
+
+                    !text-[#071b3b]/[0.045]
+
+                    dark:!text-white/[0.045]
+
                     sm:text-[40px]
                   "
                 >
                   {group.number}
                 </span>
 
-                {/* ====================================== */}
+                {/* ================================================= */}
                 {/* PROFESSIONAL SKILLS SPECIAL CARD */}
-                {/* ====================================== */}
+                {/* ================================================= */}
 
                 {index === 4 ? (
                   <div
                     className="
                       relative
+
                       flex
                       flex-col
                       gap-5
@@ -312,7 +403,7 @@ const Skills = () => {
                       lg:gap-12
                     "
                   >
-                    {/* LEFT CONTENT */}
+                    {/* LEFT */}
                     <div className="max-w-[440px]">
                       <div className="flex items-center gap-3.5">
                         {/* ICON */}
@@ -324,18 +415,27 @@ const Skills = () => {
                             shrink-0
                             items-center
                             justify-center
+
                             rounded-xl
+
                             bg-gradient-to-br
                             from-[#0877f9]
                             to-[#0756c7]
+
                             text-[17px]
-                            text-white
+                            !text-white
+
                             shadow-[0_8px_20px_rgba(8,119,249,.20)]
+
                             transition
                             duration-300
 
                             group-hover:-rotate-3
                             group-hover:scale-105
+
+                            dark:from-[#1494ff]
+                            dark:to-[#0877f9]
+                            dark:shadow-[0_8px_25px_rgba(8,119,249,.16)]
                           "
                         >
                           <i className={`bi ${group.icon}`} />
@@ -346,17 +446,33 @@ const Skills = () => {
                           <h3
                             className="
                               m-0
+
                               text-[14px]
                               font-black
                               leading-5
-                              text-[#071b3b]
+
+                              !text-[#071b3b]
+
+                              dark:!text-white
+
                               sm:text-[15px]
                             "
                           >
                             {group.title}
                           </h3>
 
-                          <div className="mt-2 h-[2px] w-7 rounded-full bg-[#0877f9]" />
+                          <div
+                            className="
+                              mt-2
+                              h-[2px]
+                              w-7
+                              rounded-full
+
+                              !bg-[#0877f9]
+
+                              dark:!bg-[#58c7ff]
+                            "
+                          />
                         </div>
                       </div>
 
@@ -364,9 +480,14 @@ const Skills = () => {
                       <p
                         className="
                           mt-4
+
                           text-[10.5px]
                           leading-5
-                          text-slate-500
+
+                          !text-slate-500
+
+                          dark:!text-slate-400
+
                           sm:text-[11.5px]
                         "
                       >
@@ -392,26 +513,49 @@ const Skills = () => {
                             inline-flex
                             items-center
                             gap-2
+
                             rounded-xl
                             border
-                            border-blue-100
-                            bg-[#f5faff]
+
+                            !border-blue-100
+                            !bg-[#f5faff]
+
                             px-3.5
                             py-2
+
                             text-[9.5px]
                             font-bold
-                            text-[#29405f]
+
+                            !text-[#29405f]
+
                             transition-all
                             duration-300
 
-                            hover:border-[#0877f9]
-                            hover:bg-white
-                            hover:text-[#0877f9]
+                            hover:!border-[#0877f9]
+                            hover:!bg-white
+                            hover:!text-[#0877f9]
+
+                            dark:!border-white/10
+                            dark:!bg-white/[0.05]
+                            dark:!text-slate-300
+
+                            dark:hover:!border-[#58c7ff]/40
+                            dark:hover:!bg-[#10233a]
+                            dark:hover:!text-[#58c7ff]
 
                             sm:text-[10.5px]
                           "
                         >
-                          <i className="bi bi-check2-circle text-[#0877f9]" />
+                          <i
+                            className="
+                              bi
+                              bi-check2-circle
+
+                              !text-[#0877f9]
+
+                              dark:!text-[#58c7ff]
+                            "
+                          />
 
                           {skill}
                         </span>
@@ -420,11 +564,10 @@ const Skills = () => {
                   </div>
                 ) : (
                   <>
-                    {/* ====================================== */}
-                    {/* NORMAL CARDS */}
-                    {/* ====================================== */}
+                    {/* ================================================= */}
+                    {/* NORMAL CARD HEADER */}
+                    {/* ================================================= */}
 
-                    {/* HEADER */}
                     <div className="relative flex items-start gap-3.5">
                       {/* ICON */}
                       <div
@@ -435,18 +578,27 @@ const Skills = () => {
                           shrink-0
                           items-center
                           justify-center
+
                           rounded-xl
+
                           bg-gradient-to-br
                           from-[#0877f9]
                           to-[#0756c7]
+
                           text-[17px]
-                          text-white
+                          !text-white
+
                           shadow-[0_8px_20px_rgba(8,119,249,.20)]
+
                           transition
                           duration-300
 
                           group-hover:-rotate-3
                           group-hover:scale-105
+
+                          dark:from-[#1494ff]
+                          dark:to-[#0877f9]
+                          dark:shadow-[0_8px_25px_rgba(8,119,249,.16)]
                         "
                       >
                         <i className={`bi ${group.icon}`} />
@@ -457,13 +609,16 @@ const Skills = () => {
                         <h3
                           className="
                             m-0
+
                             text-[14px]
                             font-black
                             leading-5
-                            text-[#071b3b]
+
+                            !text-[#071b3b]
+
+                            dark:!text-white
 
                             sm:text-[15px]
-
                             lg:text-[14px]
                             xl:text-[15px]
                           "
@@ -471,7 +626,18 @@ const Skills = () => {
                           {group.title}
                         </h3>
 
-                        <div className="mt-2 h-[2px] w-7 rounded-full bg-[#0877f9]" />
+                        <div
+                          className="
+                            mt-2
+                            h-[2px]
+                            w-7
+                            rounded-full
+
+                            !bg-[#0877f9]
+
+                            dark:!bg-[#58c7ff]
+                          "
+                        />
                       </div>
                     </div>
 
@@ -481,9 +647,14 @@ const Skills = () => {
                         relative
                         mt-4
                         max-w-[530px]
+
                         text-[10.5px]
                         leading-5
-                        text-slate-500
+
+                        !text-slate-500
+
+                        dark:!text-slate-400
+
                         sm:text-[11.5px]
                       "
                     >
@@ -495,6 +666,7 @@ const Skills = () => {
                       className="
                         relative
                         mt-5
+
                         flex
                         flex-wrap
                         gap-2
@@ -507,25 +679,48 @@ const Skills = () => {
                             inline-flex
                             items-center
                             gap-1.5
+
                             rounded-lg
                             border
-                            border-blue-100
-                            bg-[#f5faff]
+
+                            !border-blue-100
+                            !bg-[#f5faff]
+
                             px-2.5
                             py-1.5
+
                             text-[9px]
                             font-bold
-                            text-[#29405f]
+
+                            !text-[#29405f]
+
                             transition-all
                             duration-300
 
-                            group-hover:border-blue-200
-                            group-hover:bg-white
+                            group-hover:!border-blue-200
+                            group-hover:!bg-white
+
+                            dark:!border-white/10
+                            dark:!bg-white/[0.05]
+                            dark:!text-slate-300
+
+                            dark:group-hover:!border-[#58c7ff]/25
+                            dark:group-hover:!bg-[#10233a]
 
                             sm:text-[10px]
                           "
                         >
-                          <span className="h-[4px] w-[4px] rounded-full bg-[#0877f9]" />
+                          <span
+                            className="
+                              h-[4px]
+                              w-[4px]
+                              rounded-full
+
+                              !bg-[#0877f9]
+
+                              dark:!bg-[#58c7ff]
+                            "
+                          />
 
                           {skill}
                         </span>
@@ -540,15 +735,21 @@ const Skills = () => {
                     absolute
                     bottom-0
                     left-0
+
                     h-[3px]
                     w-0
+
                     bg-gradient-to-r
                     from-[#0877f9]
                     to-cyan-400
+
                     transition-all
                     duration-500
 
                     group-hover:w-full
+
+                    dark:from-[#58c7ff]
+                    dark:to-cyan-400
                   "
                 />
               </article>
@@ -556,24 +757,38 @@ const Skills = () => {
           })}
         </div>
 
-        {/* ================= BOTTOM BOX ================= */}
+        {/* ================================================= */}
+        {/* BOTTOM BOX */}
+        {/* ================================================= */}
 
         <div
           className="
             mt-5
+
             flex
             flex-col
             items-start
             justify-between
             gap-4
+
             rounded-2xl
             border
-            border-blue-100
-            bg-white/70
+
+            !border-blue-100
+            !bg-white/70
+
             px-5
             py-4
+
             shadow-sm
             backdrop-blur
+
+            transition-colors
+            duration-300
+
+            dark:!border-white/10
+            dark:!bg-[#0c1b2e]/80
+            dark:shadow-none
 
             sm:flex-row
             sm:items-center
@@ -589,9 +804,14 @@ const Skills = () => {
                 shrink-0
                 items-center
                 justify-center
+
                 rounded-lg
-                bg-blue-50
-                text-[#0877f9]
+
+                !bg-blue-50
+                !text-[#0877f9]
+
+                dark:!bg-[#0877f9]/15
+                dark:!text-[#58c7ff]
               "
             >
               <i className="bi bi-code-slash" />
@@ -601,16 +821,29 @@ const Skills = () => {
               <p
                 className="
                   m-0
+
                   text-[10px]
                   font-black
-                  text-[#071b3b]
+
+                  !text-[#071b3b]
+
+                  dark:!text-white
+
                   sm:text-[11px]
                 "
               >
                 Always Improving
               </p>
 
-              <span className="text-[9px] text-slate-500">
+              <span
+                className="
+                  text-[9px]
+
+                  !text-slate-500
+
+                  dark:!text-slate-400
+                "
+              >
                 Learning better ways to build useful web products.
               </span>
             </div>
@@ -623,14 +856,19 @@ const Skills = () => {
               inline-flex
               items-center
               gap-2
+
               text-[10px]
               font-bold
+
               !text-[#0877f9]
               !no-underline
+
               transition
 
               hover:gap-3
               hover:!no-underline
+
+              dark:!text-[#58c7ff]
             "
           >
             See My Projects

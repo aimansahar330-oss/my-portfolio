@@ -4,16 +4,61 @@ const WhatsAppCTA = () => {
       className="
         relative
         overflow-hidden
-        bg-white
+
+        !bg-white
+
         py-14
+
+        transition-colors
+        duration-500
+
+        dark:!bg-[#06111f]
+
         sm:py-16
         lg:py-20
       "
     >
+      {/* ================================================= */}
       {/* BACKGROUND DECORATION */}
-      <div className="absolute -left-28 bottom-[-80px] h-[260px] w-[260px] rounded-full bg-blue-100/60 blur-[80px]" />
+      {/* ================================================= */}
 
-      <div className="absolute -right-24 top-10 h-[260px] w-[260px] rounded-full bg-cyan-100/50 blur-[90px]" />
+      <div
+        className="
+          absolute
+          -left-28
+          bottom-[-80px]
+
+          h-[260px]
+          w-[260px]
+
+          rounded-full
+
+          !bg-blue-100/60
+
+          blur-[80px]
+
+          dark:!bg-[#0877f9]/10
+        "
+      />
+
+      <div
+        className="
+          absolute
+          -right-24
+          top-10
+
+          h-[260px]
+          w-[260px]
+
+          rounded-full
+
+          !bg-cyan-100/50
+
+          blur-[90px]
+
+          dark:!bg-cyan-400/[0.06]
+        "
+      />
 
       <div
         className="
@@ -21,12 +66,15 @@ const WhatsAppCTA = () => {
           mx-auto
           w-full
           max-w-[1180px]
+
           px-4
           sm:px-6
           lg:px-8
         "
       >
-        {/* ================= HEADER ================= */}
+        {/* ================================================= */}
+        {/* HEADER */}
+        {/* ================================================= */}
 
         <div
           className="
@@ -47,22 +95,49 @@ const WhatsAppCTA = () => {
             <div
               className="
                 mb-3
+
                 inline-flex
                 items-center
                 gap-2
+
                 rounded-full
                 border
-                border-blue-200
-                bg-[#f8fbff]
+
+                !border-blue-200
+                !bg-[#f8fbff]
+
                 px-3
                 py-1.5
+
                 shadow-sm
+
+                dark:!border-white/10
+                dark:!bg-white/[0.05]
+                dark:shadow-none
               "
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
+                <span
+                  className="
+                    absolute
+                    h-full
+                    w-full
+                    animate-ping
+                    rounded-full
+                    bg-green-400
+                    opacity-50
+                  "
+                />
 
-                <span className="relative h-2 w-2 rounded-full bg-green-500" />
+                <span
+                  className="
+                    relative
+                    h-2
+                    w-2
+                    rounded-full
+                    bg-green-500
+                  "
+                />
               </span>
 
               <span
@@ -70,7 +145,11 @@ const WhatsAppCTA = () => {
                   text-[9px]
                   font-black
                   tracking-[0.18em]
-                  text-[#0877f9]
+
+                  !text-[#0877f9]
+
+                  dark:!text-[#58c7ff]
+
                   sm:text-[10px]
                 "
               >
@@ -82,17 +161,30 @@ const WhatsAppCTA = () => {
             <h2
               className="
                 m-0
+
                 text-[28px]
                 font-black
                 tracking-[-0.04em]
-                text-[#071b3b]
+
+                !text-[#071b3b]
+
+                dark:!text-[#f8fafc]
 
                 sm:text-[34px]
                 lg:text-[38px]
               "
             >
               Let's Build Something
-              <span className="text-[#0877f9]"> Great</span>
+              <span
+                className="
+                  !text-[#0877f9]
+
+                  dark:!text-[#58c7ff]
+                "
+              >
+                {" "}
+                Great
+              </span>
             </h2>
           </div>
 
@@ -101,9 +193,13 @@ const WhatsAppCTA = () => {
             className="
               m-0
               max-w-[430px]
+
               text-[11px]
               leading-5
-              text-slate-500
+
+              !text-slate-500
+
+              dark:!text-slate-400
 
               sm:text-[12px]
               sm:leading-6
@@ -116,26 +212,74 @@ const WhatsAppCTA = () => {
           </p>
         </div>
 
-        {/* ================= MAIN CONTACT CARD ================= */}
+        {/* ================================================= */}
+        {/* MAIN CONTACT CARD */}
+        {/* ================================================= */}
 
         <div
           className="
             relative
             overflow-hidden
+
             rounded-[24px]
             border
-            border-blue-100
+
+            !border-blue-100
+
             bg-gradient-to-br
             from-[#071b3b]
             via-[#07366f]
             to-[#075bc9]
+
             shadow-[0_20px_60px_rgba(7,45,100,0.18)]
+
+            dark:!border-white/10
+
+            dark:from-[#081827]
+            dark:via-[#0a2340]
+            dark:to-[#0b315d]
+
+            dark:shadow-[0_22px_65px_rgba(0,0,0,.30)]
           "
         >
           {/* DECORATIVE GLOWS */}
-          <div className="absolute -right-20 -top-20 h-[260px] w-[260px] rounded-full bg-cyan-300/15 blur-[60px]" />
+          <div
+            className="
+              absolute
+              -right-20
+              -top-20
 
-          <div className="absolute -bottom-24 left-[25%] h-[220px] w-[220px] rounded-full bg-blue-300/10 blur-[70px]" />
+              h-[260px]
+              w-[260px]
+
+              rounded-full
+
+              !bg-cyan-300/15
+
+              blur-[60px]
+
+              dark:!bg-cyan-400/10
+            "
+          />
+
+          <div
+            className="
+              absolute
+              -bottom-24
+              left-[25%]
+
+              h-[220px]
+              w-[220px]
+
+              rounded-full
+
+              !bg-blue-300/10
+
+              blur-[70px]
+
+              dark:!bg-[#0877f9]/10
+            "
+          />
 
           {/* DOTS */}
           <div
@@ -143,10 +287,16 @@ const WhatsAppCTA = () => {
               absolute
               right-[5%]
               top-[12%]
+
               hidden
+
               h-[100px]
               w-[100px]
+
               opacity-20
+
+              dark:opacity-10
+
               lg:block
             "
             style={{
@@ -156,15 +306,20 @@ const WhatsAppCTA = () => {
             }}
           />
 
+          {/* ================================================= */}
           {/* CONTENT GRID */}
+          {/* ================================================= */}
+
           <div
             className="
               relative
               z-10
+
               grid
               grid-cols-1
               items-center
               gap-8
+
               p-5
 
               sm:p-7
@@ -174,30 +329,46 @@ const WhatsAppCTA = () => {
               lg:p-10
             "
           >
-            {/* ================================== */}
+            {/* ================================================= */}
             {/* LEFT CONTENT */}
-            {/* ================================== */}
+            {/* ================================================= */}
 
             <div>
-              {/* SMALL STATUS */}
+              {/* STATUS */}
               <div
                 className="
                   mb-5
+
                   inline-flex
                   items-center
                   gap-2
+
                   rounded-full
                   border
-                  border-white/15
-                  bg-white/10
+
+                  !border-white/15
+                  !bg-white/10
+
                   px-3
                   py-1.5
+
                   backdrop-blur
+
+                  dark:!border-white/10
+                  dark:!bg-white/[0.06]
                 "
               >
                 <span className="h-2 w-2 rounded-full bg-green-400" />
 
-                <span className="text-[9px] font-bold tracking-[0.08em] text-blue-50">
+                <span
+                  className="
+                    text-[9px]
+                    font-bold
+                    tracking-[0.08em]
+
+                    !text-blue-50
+                  "
+                >
                   AVAILABLE FOR NEW PROJECTS
                 </span>
               </div>
@@ -207,18 +378,23 @@ const WhatsAppCTA = () => {
                 className="
                   m-0
                   max-w-[620px]
+
                   text-[25px]
                   font-black
                   leading-[1.15]
                   tracking-[-0.03em]
-                  text-white
+
+                  !text-white
 
                   sm:text-[31px]
                   lg:text-[35px]
                 "
               >
                 Have an idea that needs
-                <span className="text-cyan-300"> the right build?</span>
+                <span className="!text-cyan-300">
+                  {" "}
+                  the right build?
+                </span>
               </h3>
 
               {/* DESCRIPTION */}
@@ -226,9 +402,13 @@ const WhatsAppCTA = () => {
                 className="
                   mt-4
                   max-w-[610px]
+
                   text-[11px]
                   leading-6
-                  text-blue-100
+
+                  !text-blue-100
+
+                  dark:!text-slate-300
 
                   sm:text-[12px]
                   sm:leading-6
@@ -240,10 +420,14 @@ const WhatsAppCTA = () => {
                 reach out and discuss your requirements.
               </p>
 
+              {/* ================================================= */}
               {/* CONTACT INFO */}
+              {/* ================================================= */}
+
               <div
                 className="
                   mt-6
+
                   flex
                   flex-col
                   gap-3
@@ -259,13 +443,20 @@ const WhatsAppCTA = () => {
                     flex
                     items-center
                     gap-3
+
                     rounded-xl
                     border
-                    border-white/10
-                    bg-white/10
+
+                    !border-white/10
+                    !bg-white/10
+
                     px-4
                     py-3
+
                     backdrop-blur
+
+                    dark:!border-white/10
+                    dark:!bg-white/[0.06]
                   "
                 >
                   <div
@@ -276,38 +467,70 @@ const WhatsAppCTA = () => {
                       shrink-0
                       items-center
                       justify-center
+
                       rounded-lg
-                      bg-green-500/15
-                      text-green-400
+
+                      !bg-green-500/15
+                      !text-green-400
                     "
                   >
                     <i className="bi bi-whatsapp text-[17px]" />
                   </div>
 
                   <div>
-                    <span className="block text-[8px] uppercase tracking-[0.12em] text-blue-200">
+                    <span
+                      className="
+                        block
+
+                        text-[8px]
+                        uppercase
+                        tracking-[0.12em]
+
+                        !text-blue-200
+
+                        dark:!text-slate-400
+                      "
+                    >
                       WhatsApp
                     </span>
 
-                    <strong className="block text-[11px] font-bold text-white sm:text-[12px]">
+                    <strong
+                      className="
+                        block
+
+                        text-[11px]
+                        font-bold
+
+                        !text-white
+
+                        sm:text-[12px]
+                      "
+                    >
                       0328-8899079
                     </strong>
                   </div>
                 </div>
 
-                {/* RESPONSE */}
+                {/* DISCUSS */}
                 <div
                   className="
                     flex
                     items-center
                     gap-3
+
                     rounded-xl
                     border
-                    border-white/10
-                    bg-white/10
+
+                    !border-white/10
+                    !bg-white/10
+
                     px-4
                     py-3
+
                     backdrop-blur
+
+                    dark:!border-white/10
+                    dark:!bg-white/[0.06]
                   "
                 >
                   <div
@@ -318,20 +541,45 @@ const WhatsAppCTA = () => {
                       shrink-0
                       items-center
                       justify-center
+
                       rounded-lg
-                      bg-cyan-400/10
-                      text-cyan-300
+
+                      !bg-cyan-400/10
+                      !text-cyan-300
                     "
                   >
                     <i className="bi bi-chat-dots-fill text-[15px]" />
                   </div>
 
                   <div>
-                    <span className="block text-[8px] uppercase tracking-[0.12em] text-blue-200">
+                    <span
+                      className="
+                        block
+
+                        text-[8px]
+                        uppercase
+                        tracking-[0.12em]
+
+                        !text-blue-200
+
+                        dark:!text-slate-400
+                      "
+                    >
                       Let's Discuss
                     </span>
 
-                    <strong className="block text-[11px] font-bold text-white sm:text-[12px]">
+                    <strong
+                      className="
+                        block
+
+                        text-[11px]
+                        font-bold
+
+                        !text-white
+
+                        sm:text-[12px]
+                      "
+                    >
                       Your Next Project
                     </strong>
                   </div>
@@ -339,41 +587,74 @@ const WhatsAppCTA = () => {
               </div>
             </div>
 
-            {/* ================================== */}
+            {/* ================================================= */}
             {/* RIGHT WHATSAPP CARD */}
-            {/* ================================== */}
+            {/* ================================================= */}
 
             <div
               className="
                 relative
                 overflow-hidden
+
                 rounded-[20px]
                 border
-                border-white/20
-                bg-white/95
+
+                !border-white/20
+                !bg-white/95
+
                 p-5
+
                 shadow-[0_18px_45px_rgba(0,0,0,0.15)]
+
                 backdrop-blur
+
+                transition-colors
+                duration-300
+
+                dark:!border-white/10
+                dark:!bg-[#0c1b2e]/95
+
+                dark:shadow-[0_18px_45px_rgba(0,0,0,.28)]
 
                 sm:p-6
               "
             >
               {/* BACKGROUND DECORATION */}
-              <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-green-100" />
+              <div
+                className="
+                  absolute
+                  -right-12
+                  -top-12
+
+                  h-28
+                  w-28
+
+                  rounded-full
+
+                  !bg-green-100
+
+                  dark:!bg-green-500/10
+                "
+              />
 
               {/* ICON */}
               <div
                 className="
                   relative
+
                   flex
                   h-14
                   w-14
                   items-center
                   justify-center
+
                   rounded-2xl
-                  bg-green-500
+
+                  !bg-green-500
+
                   text-[27px]
-                  text-white
+                  !text-white
+
                   shadow-[0_10px_25px_rgba(34,197,94,.28)]
                 "
               >
@@ -385,10 +666,14 @@ const WhatsAppCTA = () => {
                 className="
                   relative
                   mt-5
+
                   text-[20px]
                   font-black
                   tracking-[-0.025em]
-                  text-[#071b3b]
+
+                  !text-[#071b3b]
+
+                  dark:!text-white
 
                   sm:text-[22px]
                 "
@@ -401,9 +686,13 @@ const WhatsAppCTA = () => {
                 className="
                   relative
                   mt-2
+
                   text-[10.5px]
                   leading-5
-                  text-slate-500
+
+                  !text-slate-500
+
+                  dark:!text-slate-400
 
                   sm:text-[11.5px]
                 "
@@ -412,7 +701,7 @@ const WhatsAppCTA = () => {
                 discuss your project.
               </p>
 
-              {/* BUTTON */}
+              {/* WHATSAPP BUTTON */}
               <a
                 href="https://wa.me/923288899079"
                 target="_blank"
@@ -420,29 +709,43 @@ const WhatsAppCTA = () => {
                 className="
                   group
                   relative
+
                   mt-5
+
                   flex
                   w-full
                   items-center
                   justify-center
                   gap-3
+
                   rounded-xl
-                  bg-green-500
+
+                  !bg-green-500
+
                   px-5
                   py-3.5
+
                   text-[11px]
                   font-bold
+
                   !text-white
                   !no-underline
+
                   shadow-[0_10px_25px_rgba(34,197,94,.22)]
+
                   transition
                   duration-300
 
                   hover:-translate-y-1
-                  hover:bg-green-600
+                  hover:!bg-green-600
                   hover:!text-white
                   hover:!no-underline
                   hover:shadow-[0_14px_30px_rgba(34,197,94,.30)]
+
+                  dark:!bg-green-500
+                  dark:!text-white
+
+                  dark:hover:!bg-green-600
 
                   sm:text-[12px]
                 "
@@ -451,7 +754,17 @@ const WhatsAppCTA = () => {
 
                 Chat on WhatsApp
 
-                <i className="bi bi-arrow-right transition duration-300 group-hover:translate-x-1" />
+                <i
+                  className="
+                    bi
+                    bi-arrow-right
+
+                    transition
+                    duration-300
+
+                    group-hover:translate-x-1
+                  "
+                />
               </a>
 
               {/* SMALL NOTE */}
@@ -459,6 +772,7 @@ const WhatsAppCTA = () => {
                 className="
                   relative
                   mt-4
+
                   flex
                   items-center
                   justify-center
@@ -467,7 +781,16 @@ const WhatsAppCTA = () => {
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
 
-                <span className="text-[8.5px] font-medium text-slate-400">
+                <span
+                  className="
+                    text-[8.5px]
+                    font-medium
+
+                    !text-slate-400
+
+                    dark:!text-slate-500
+                  "
+                >
                   Direct WhatsApp message
                 </span>
               </div>

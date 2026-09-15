@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <header
         className="
           fixed
@@ -38,16 +38,16 @@ const Navbar = () => {
             rounded-2xl
             border
             border-white/70
-            bg-white/85
+            bg-white/90
             px-4
             shadow-[0_10px_40px_rgba(7,27,59,0.08)]
             backdrop-blur-xl
-            transition-colors
+            transition-all
             duration-300
 
             dark:border-white/10
             dark:bg-[#071321]/90
-            dark:shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+            dark:shadow-[0_10px_40px_rgba(0,0,0,0.28)]
 
             sm:px-5
             lg:px-6
@@ -84,9 +84,10 @@ const Navbar = () => {
 
                 group-hover:-translate-y-0.5
                 group-hover:rotate-[-2deg]
+
+                dark:shadow-[0_10px_28px_rgba(8,119,249,0.22)]
               "
             >
-              {/* GLOW */}
               <span
                 className="
                   absolute
@@ -100,17 +101,7 @@ const Navbar = () => {
                 "
               />
 
-              {/* AS */}
-              <span
-                className="
-                  relative
-                  flex
-                  items-baseline
-                  text-[20px]
-                  font-black
-                  tracking-[-0.11em]
-                "
-              >
+              <span className="relative flex items-baseline text-[20px] font-black tracking-[-0.11em]">
                 <span className="text-white">
                   A
                 </span>
@@ -120,7 +111,6 @@ const Navbar = () => {
                 </span>
               </span>
 
-              {/* SMALL LINE */}
               <span
                 className="
                   absolute
@@ -136,7 +126,7 @@ const Navbar = () => {
             </div>
           </a>
 
-          {/* ================= MOBILE CENTER TOGGLE ================= */}
+          {/* ================= MOBILE CENTER THEME ================= */}
           <div
             className="
               absolute
@@ -161,7 +151,7 @@ const Navbar = () => {
               border-blue-100
               bg-[#f7fbff]
               p-1.5
-              transition-colors
+              transition-all
               duration-300
 
               dark:border-white/10
@@ -195,11 +185,11 @@ const Navbar = () => {
                   dark:!text-slate-300
                   dark:hover:bg-white/[0.07]
                   dark:hover:!text-[#58c7ff]
+                  dark:hover:shadow-none
                 "
               >
                 {name}
 
-                {/* HOVER UNDERLINE */}
                 <span
                   className="
                     absolute
@@ -213,6 +203,8 @@ const Navbar = () => {
                     transition-all
                     duration-300
                     group-hover:w-5
+
+                    dark:bg-[#58c7ff]
                   "
                 />
               </a>
@@ -221,7 +213,7 @@ const Navbar = () => {
 
           {/* ================= RIGHT SIDE ================= */}
           <div className="flex items-center gap-2">
-            {/* DESKTOP THEME TOGGLE */}
+            {/* DESKTOP THEME */}
             <div className="hidden lg:block">
               <ThemeToggle />
             </div>
@@ -254,6 +246,10 @@ const Navbar = () => {
                 hover:!no-underline
                 hover:shadow-[0_12px_28px_rgba(8,119,249,0.32)]
 
+                dark:from-[#118cff]
+                dark:to-[#0877f9]
+                dark:shadow-[0_8px_25px_rgba(8,119,249,.18)]
+
                 lg:inline-flex
               "
             >
@@ -273,19 +269,10 @@ const Navbar = () => {
 
               Download CV
 
-              <i
-                className="
-                  bi
-                  bi-arrow-down-short
-                  text-[15px]
-                  transition-transform
-                  duration-300
-                  group-hover:translate-y-0.5
-                "
-              />
+              <i className="bi bi-arrow-down-short text-[15px] transition-transform duration-300 group-hover:translate-y-0.5" />
             </a>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE MENU */}
             <button
               type="button"
               className="
@@ -307,6 +294,9 @@ const Navbar = () => {
 
                 dark:border-white/10
                 dark:bg-white/[0.06]
+                dark:shadow-none
+
+                dark:hover:border-white/20
                 dark:hover:bg-white/[0.10]
 
                 lg:hidden
@@ -322,6 +312,7 @@ const Navbar = () => {
                   bi-list
                   text-[25px]
                   text-[#0877f9]
+
                   dark:text-[#58c7ff]
                 "
               />
@@ -330,7 +321,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* ================= MOBILE OFFCANVAS ================= */}
+      {/* ================= MOBILE MENU ================= */}
       <div
         className="
           offcanvas
@@ -345,7 +336,7 @@ const Navbar = () => {
         tabIndex="-1"
         id="mobileMenu"
       >
-        {/* ================= MOBILE HEADER ================= */}
+        {/* HEADER */}
         <div
           className="
             offcanvas-header
@@ -359,7 +350,7 @@ const Navbar = () => {
             dark:bg-[#081727]
           "
         >
-          {/* MOBILE LOGO */}
+          {/* LOGO */}
           <a
             href="#home"
             data-bs-dismiss="offcanvas"
@@ -387,7 +378,6 @@ const Navbar = () => {
                 shadow-[0_8px_20px_rgba(8,119,249,0.25)]
               "
             >
-              {/* GLOW */}
               <span
                 className="
                   absolute
@@ -401,17 +391,7 @@ const Navbar = () => {
                 "
               />
 
-              {/* AS */}
-              <span
-                className="
-                  relative
-                  flex
-                  items-baseline
-                  text-[20px]
-                  font-black
-                  tracking-[-0.11em]
-                "
-              >
+              <span className="relative flex items-baseline text-[20px] font-black tracking-[-0.11em]">
                 <span className="text-white">
                   A
                 </span>
@@ -448,7 +428,7 @@ const Navbar = () => {
           />
         </div>
 
-        {/* ================= MOBILE BODY ================= */}
+        {/* BODY */}
         <div
           className="
             offcanvas-body
@@ -549,7 +529,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* MOBILE DOWNLOAD CV */}
+          {/* DOWNLOAD CV */}
           <a
             href={cv}
             download="Aiman_Sahar_CV.pdf"
@@ -573,11 +553,14 @@ const Navbar = () => {
               shadow-lg
               shadow-blue-200
               transition
+              duration-300
 
               hover:-translate-y-0.5
               hover:!text-white
               hover:!no-underline
 
+              dark:from-[#118cff]
+              dark:to-[#0877f9]
               dark:shadow-none
             "
           >
@@ -616,7 +599,6 @@ const Navbar = () => {
             <div className="mt-2 flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span className="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
-
                 <span className="relative h-2 w-2 rounded-full bg-green-500" />
               </span>
 

@@ -10,9 +10,11 @@ const ThemeToggle = () => {
 
     if (darkMode) {
       root.classList.add("dark");
+      root.style.colorScheme = "dark";
       localStorage.setItem("portfolio-theme", "dark");
     } else {
       root.classList.remove("dark");
+      root.style.colorScheme = "light";
       localStorage.setItem("portfolio-theme", "light");
     }
   }, [darkMode]);
@@ -23,7 +25,6 @@ const ThemeToggle = () => {
       onClick={() => setDarkMode((prev) => !prev)}
       aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
       className="
-        group
         relative
         flex
         h-11
@@ -33,18 +34,21 @@ const ThemeToggle = () => {
         overflow-hidden
         rounded-xl
         border
-        border-blue-100
-        bg-[#f2f8ff]
+        !border-blue-100
+        !bg-[#f2f8ff]
         shadow-sm
         transition-all
         duration-300
 
         hover:-translate-y-0.5
-        hover:border-blue-300
-        hover:shadow-md
+        hover:!border-blue-300
 
-        dark:border-white/10
-        dark:bg-[#0d1c30]
+        dark:!border-white/10
+        dark:!bg-[#102033]
+        dark:shadow-none
+
+        dark:hover:!border-white/20
+        dark:hover:!bg-[#15283f]
       "
     >
       {/* SUN */}
@@ -52,11 +56,10 @@ const ThemeToggle = () => {
         className={`
           bi bi-sun-fill
           absolute
-          text-[18px]
-          text-amber-400
+          !text-[18px]
+          !text-amber-400
           transition-all
           duration-500
-
           ${
             darkMode
               ? "rotate-90 scale-0 opacity-0"
@@ -70,11 +73,10 @@ const ThemeToggle = () => {
         className={`
           bi bi-moon-stars-fill
           absolute
-          text-[17px]
-          text-[#67c8ff]
+          !text-[17px]
+          !text-[#58c7ff]
           transition-all
           duration-500
-
           ${
             darkMode
               ? "rotate-0 scale-100 opacity-100"
