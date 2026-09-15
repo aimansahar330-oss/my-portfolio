@@ -651,7 +651,7 @@ const Hero = () => {
 
           <p
             className="
-              mt-5
+              mt-2
               max-w-[540px]
 
               text-[12px]
@@ -821,194 +821,216 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* ================================================= */}
-          {/* SOCIAL LINKS */}
-          {/* ================================================= */}
+     {/* ================================================= */}
+{/* SOCIAL LINKS */}
+{/* ================================================= */}
 
-          <div
-            className="
-              mt-6
+<div
+  className="
+    mt-6
 
-              flex
-              flex-wrap
-              items-center
-              justify-center
-              gap-3
+    flex
+    flex-nowrap
+    items-center
+    justify-center
 
-              lg:justify-start
-            "
-          >
-            <span
-              className="
-                mr-1
+    gap-2
 
-                text-[9px]
-                font-black
-                uppercase
-                tracking-[0.15em]
+    sm:gap-3
 
-                !text-slate-400
+    lg:justify-start
+  "
+>
+  {/* FOLLOW ME */}
+  <span
+    className="
+      mr-1
+      shrink-0
 
-                dark:!text-slate-400
-              "
-            >
-              Follow Me
-            </span>
+      whitespace-nowrap
 
-            {/* ================= GITHUB ================= */}
+      text-[8px]
+      font-black
+      uppercase
+      tracking-[0.12em]
 
-            <a
-              href="https://github.com/aimansahar330-oss"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
+      !text-slate-400
 
-                rounded-xl
-                border
+      dark:!text-slate-400
 
-                !border-slate-300
-                !bg-white
-                !text-[#071b3b]
-                !no-underline
+      sm:text-[9px]
+      sm:tracking-[0.15em]
+    "
+  >
+    Follow Me
+  </span>
 
-                shadow-sm
+  {/* ================= GITHUB ================= */}
 
-                transition
-                duration-300
+  <a
+    href="https://github.com/aimansahar330-oss"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="GitHub"
+    className="
+      flex
+      h-9
+      w-9
+      shrink-0
+      items-center
+      justify-center
 
-                hover:-translate-y-1
-                hover:!border-[#071b3b]
-                hover:!bg-[#071b3b]
-                hover:!text-white
-                hover:!no-underline
+      rounded-xl
+      border
 
-                dark:!border-white/20
-                dark:!bg-[#17263a]
-                dark:!text-white
-                dark:shadow-none
+      !border-slate-300
+      !bg-white
+      !text-[#0A66C2]
+      !no-underline
 
-                dark:hover:!border-white
-                dark:hover:!bg-white
-                dark:hover:!text-[#071b3b]
-              "
-            >
-              <i className="bi bi-github text-[18px]" />
-            </a>
+      shadow-sm
 
-            {/* ================= LINKEDIN ================= */}
+      transition
+      duration-300
 
-            <a
-              href="https://www.linkedin.com/in/aiman-sahar-197872436?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
+      hover:-translate-y-1
+      hover:!border-[#0A66C2]
+      hover:!bg-[#0A66C2]
+      hover:!text-white
+      hover:!no-underline
 
-                rounded-xl
-                border
+      dark:!border-white/20
+      dark:!bg-[#17263a]
+      dark:!text-white
+      dark:shadow-none
 
-                !border-blue-200
-                !bg-white
-                !text-[#0A66C2]
-                !no-underline
+      dark:hover:!border-white
+      dark:hover:!bg-white
+      dark:hover:!text-[#071b3b]
 
-                shadow-sm
+      sm:h-10
+      sm:w-10
+    "
+  >
+    <i className="bi bi-github text-[16px] sm:text-[18px]" />
+  </a>
 
-                transition
-                duration-300
+  {/* ================= LINKEDIN ================= */}
 
-                hover:-translate-y-1
-                hover:!border-[#0A66C2]
-                hover:!bg-[#0A66C2]
-                hover:!text-white
+  <a
+    href="https://www.linkedin.com/in/aiman-sahar-197872436?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="LinkedIn"
+    className="
+      flex
+      h-9
+      w-9
+      shrink-0
+      items-center
+      justify-center
 
-                dark:!border-[#4ea5ff]/25
-                dark:!bg-[#0A66C2]/15
-                dark:!text-[#70baff]
-                dark:shadow-none
+      rounded-xl
+      border
 
-                dark:hover:!border-[#0A66C2]
-                dark:hover:!bg-[#0A66C2]
-                dark:hover:!text-white
-              "
-            >
-              <i className="bi bi-linkedin text-[17px]" />
-            </a>
+      !border-blue-200
+      !bg-white
+      !text-[#0A66C2]
+      !no-underline
 
-            {/* ================= FACEBOOK ================= */}
+      shadow-sm
 
-            <a
-              href="https://www.facebook.com/share/18zpyVrgH7/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
+      transition
+      duration-300
 
-                rounded-xl
-                border
+      hover:-translate-y-1
+      hover:!border-[#0A66C2]
+      hover:!bg-[#0A66C2]
+      hover:!text-white
 
-                !border-blue-200
-                !bg-white
-                !text-[#1877F2]
-                !no-underline
+      dark:!border-[#4ea5ff]/25
+      dark:!bg-[#0A66C2]/15
+      dark:!text-[#70baff]
+      dark:shadow-none
 
-                shadow-sm
+      dark:hover:!border-[#0A66C2]
+      dark:hover:!bg-[#0A66C2]
+      dark:hover:!text-white
 
-                transition
-                duration-300
+      sm:h-10
+      sm:w-10
+    "
+  >
+    <i className="bi bi-linkedin text-[15px] sm:text-[17px]" />
+  </a>
 
-                hover:-translate-y-1
-                hover:!border-[#1877F2]
-                hover:!bg-[#1877F2]
-                hover:!text-white
+  {/* ================= FACEBOOK ================= */}
 
-                dark:!border-[#5b9cff]/25
-                dark:!bg-[#1877F2]/15
-                dark:!text-[#70adff]
-                dark:shadow-none
+  <a
+    href="https://www.facebook.com/share/18zpyVrgH7/"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Facebook"
+    className="
+      flex
+      h-9
+      w-9
+      shrink-0
+      items-center
+      justify-center
 
-                dark:hover:!border-[#1877F2]
-                dark:hover:!bg-[#1877F2]
-                dark:hover:!text-white
-              "
-            >
-              <i className="bi bi-facebook text-[17px]" />
-            </a>
+      rounded-xl
+      border
 
-            {/* DECORATIVE LINE */}
-            <div
-              className="
-                ml-1
-                hidden
-                h-px
-                w-16
+      !border-blue-200
+      !bg-white
+      !text-[#1877F2]
+      !no-underline
 
-                bg-gradient-to-r
-                from-blue-300
-                to-transparent
+      shadow-sm
 
-                dark:from-[#58c7ff]/40
+      transition
+      duration-300
 
-                sm:block
-              "
-            />
-          </div>
+      hover:-translate-y-1
+      hover:!border-[#1877F2]
+      hover:!bg-[#1877F2]
+      hover:!text-white
+
+      dark:!border-[#5b9cff]/25
+      dark:!bg-[#1877F2]/15
+      dark:!text-[#70adff]
+      dark:shadow-none
+
+      dark:hover:!border-[#1877F2]
+      dark:hover:!bg-[#1877F2]
+      dark:hover:!text-white
+
+      sm:h-10
+      sm:w-10
+    "
+  >
+    <i className="bi bi-facebook text-[15px] sm:text-[17px]" />
+  </a>
+
+  {/* DECORATIVE LINE - DESKTOP ONLY */}
+  <div
+    className="
+      ml-1
+      hidden
+      h-px
+      w-16
+
+      bg-gradient-to-r
+      from-blue-300
+      to-transparent
+
+      dark:from-[#58c7ff]/40
+
+      lg:block
+    "
+  />
+</div>
         </div>
       </div>
     </section>
