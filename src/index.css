@@ -42,7 +42,7 @@ body {
   transition:
     transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 1.3s ease,
-    filter 1.45s ease;
+    filter 0.55s ease;
 
   transition-delay: var(--reveal-delay, 0ms);
 
@@ -147,7 +147,7 @@ body {
     transition:
       transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
       opacity 1.25s ease,
-      filter 1.35s ease;
+      filter 0.55s ease;
 
     transition-delay: var(--reveal-delay, 0ms);
   }
