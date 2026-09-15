@@ -596,3 +596,76 @@ header > div,
     box-shadow,
     transform;
 }
+
+/* =====================================================
+   HERO + PROJECT BUTTONS DARK MODE
+===================================================== */
+
+/* HERO GITHUB */
+html.dark .hero-github-btn {
+  background: #101b2b !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #f8fafc !important;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+html.dark .hero-github-btn:hover {
+  background: #f8fafc !important;
+  border-color: #f8fafc !important;
+  color: #071b3b !important;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* HERO WHATSAPP */
+html.dark .hero-whatsapp-btn {
+  background: rgba(34, 197, 94, 0.08) !important;
+  border-color: rgba(74, 222, 128, 0.24) !important;
+  color: #dcfce7 !important;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.16) !important;
+}
+
+html.dark .hero-whatsapp-btn:hover {
+  background: #22c55e !important;
+  border-color: #22c55e !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 12px 28px rgba(34, 197, 94, 0.22) !important;
+}
+
+html.dark .hero-whatsapp-icon {
+  background: rgba(34, 197, 94, 0.13) !important;
+  color: #4ade80 !important;
+}
+
+html.dark .hero-whatsapp-btn:hover .hero-whatsapp-icon {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
+
+/* PROJECT SOURCE CODE */
+html.dark .project-source-btn {
+  background: #101b2b !important;
+  border-color: rgba(255, 255, 255, 0.13) !important;
+  color: #e2e8f0 !important;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.17) !important;
+}
+
+html.dark .project-source-btn:hover {
+  background: #f8fafc !important;
+  border-color: #f8fafc !important;
+  color: #071b3b !important;
+
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.28) !important;
+}

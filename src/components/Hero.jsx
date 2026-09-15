@@ -322,43 +322,39 @@ const Hero = () => {
 
             {/* WHATSAPP */}
             <a
-              href="https://wa.me/923288899079"
-              target="_blank"
-              rel="noreferrer"
-              className="
-                group
-                inline-flex
-                items-center
-                justify-center
-                gap-3
-                rounded-xl
-                border
-                border-[#071b3b]/15
-                bg-white/80
-                px-6
-                py-3.5
-                text-[12px]
-                font-bold
-                !text-[#071b3b]
-                no-underline
-                shadow-sm
-                backdrop-blur
-                transition
-                duration-300
-                hover:-translate-y-1
-                hover:border-green-300
-                hover:bg-green-50
-                hover:!text-green-600
-                hover:shadow-lg
-                sm:text-[13px]
-              "
-            >
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-green-50 text-green-500 transition group-hover:bg-green-500 group-hover:text-white">
-                <i className="bi bi-whatsapp text-[12px]"></i>
-              </span>
+  href="https://wa.me/923288899079"
+  target="_blank"
+  rel="noreferrer"
+  className="
+    hero-whatsapp-btn
+    group
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    rounded-xl
+    border
+    border-[#071b3b]/15
+    bg-white/80
+    px-6
+    py-3.5
+    text-[12px]
+    font-bold
+    !text-[#071b3b]
+    !no-underline
+    shadow-sm
+    transition
+    duration-300
+    hover:-translate-y-1
+    sm:text-[13px]
+  "
+>
+  <span className="hero-whatsapp-icon flex h-6 w-6 items-center justify-center rounded-md bg-green-50 text-green-500">
+    <i className="bi bi-whatsapp text-[12px]" />
+  </span>
 
-              Let's Connect
-            </a>
+  Let's Connect
+</a>
           </div>
 
           {/* SOCIAL LINKS */}
@@ -378,35 +374,32 @@ const Hero = () => {
             </span>
 
             {/* GITHUB */}
-            <a
-              href="https://github.com/aimansahar330-oss"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="
-                flex
-                h-10
-                w-10
-                items-center
-                justify-center
-                rounded-xl
-                border
-                border-slate-200
-                bg-white
-                !text-[#071b3b]
-                no-underline
-                shadow-sm
-                transition
-                duration-300
-                hover:-translate-y-1
-                hover:border-[#071b3b]
-                hover:bg-[#071b3b]
-                hover:!text-white
-                hover:shadow-lg
-              "
-            >
-              <i className="bi bi-github text-[17px]"></i>
-            </a>
+           <a
+  href="https://github.com/aimansahar330-oss"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="GitHub"
+  className="
+    hero-github-btn
+    flex
+    h-10
+    w-10
+    items-center
+    justify-center
+    rounded-xl
+    border
+    border-slate-200
+    bg-white
+    !text-[#071b3b]
+    !no-underline
+    shadow-sm
+    transition
+    duration-300
+    hover:-translate-y-1
+  "
+>
+  <i className="bi bi-github text-[17px]" />
+</a>
 
             {/* LINKEDIN */}
             <a
