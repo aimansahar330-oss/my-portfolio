@@ -1,4 +1,5 @@
 import cv from "../assets/Aiman_Sahar_CV.pdf";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const navItems = [
@@ -11,10 +12,23 @@ const Navbar = () => {
 
   return (
     <>
-      {/* NAVBAR */}
-      <header className="fixed left-0 top-0 z-50 w-full px-3 pt-3 sm:px-5 lg:px-6">
+      {/* ================= NAVBAR ================= */}
+      <header
+        className="
+          fixed
+          left-0
+          top-0
+          z-50
+          w-full
+          px-3
+          pt-3
+          sm:px-5
+          lg:px-6
+        "
+      >
         <div
           className="
+            relative
             mx-auto
             flex
             h-[70px]
@@ -28,18 +42,26 @@ const Navbar = () => {
             px-4
             shadow-[0_10px_40px_rgba(7,27,59,0.08)]
             backdrop-blur-xl
+            transition-colors
+            duration-300
+
+            dark:border-white/10
+            dark:bg-[#071321]/90
+            dark:shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+
             sm:px-5
             lg:px-6
           "
         >
-          {/* LOGO */}
+          {/* ================= LOGO ================= */}
           <a
             href="#home"
             className="
               group
               flex
               items-center
-              no-underline
+              !no-underline
+              hover:!no-underline
             "
           >
             <div
@@ -59,11 +81,12 @@ const Navbar = () => {
                 shadow-[0_10px_25px_rgba(8,119,249,0.25)]
                 transition
                 duration-300
+
                 group-hover:-translate-y-0.5
                 group-hover:rotate-[-2deg]
               "
             >
-              {/* TOP GLOW */}
+              {/* GLOW */}
               <span
                 className="
                   absolute
@@ -75,15 +98,29 @@ const Navbar = () => {
                   bg-cyan-300/30
                   blur-md
                 "
-              ></span>
+              />
 
               {/* AS */}
-              <span className="relative flex items-baseline text-[20px] font-black tracking-[-0.11em]">
-                <span className="text-white">A</span>
-                <span className="ml-[1px] text-[#58c7ff]">S</span>
+              <span
+                className="
+                  relative
+                  flex
+                  items-baseline
+                  text-[20px]
+                  font-black
+                  tracking-[-0.11em]
+                "
+              >
+                <span className="text-white">
+                  A
+                </span>
+
+                <span className="ml-[1px] text-[#58c7ff]">
+                  S
+                </span>
               </span>
 
-              {/* BOTTOM LINE */}
+              {/* SMALL LINE */}
               <span
                 className="
                   absolute
@@ -95,11 +132,26 @@ const Navbar = () => {
                   rounded-full
                   bg-white/60
                 "
-              ></span>
+              />
             </div>
           </a>
 
-          {/* DESKTOP NAV */}
+          {/* ================= MOBILE CENTER TOGGLE ================= */}
+          <div
+            className="
+              absolute
+              left-1/2
+              top-1/2
+              z-20
+              -translate-x-1/2
+              -translate-y-1/2
+              lg:hidden
+            "
+          >
+            <ThemeToggle />
+          </div>
+
+          {/* ================= DESKTOP NAV ================= */}
           <nav
             className="
               hidden
@@ -109,6 +161,12 @@ const Navbar = () => {
               border-blue-100
               bg-[#f7fbff]
               p-1.5
+              transition-colors
+              duration-300
+
+              dark:border-white/10
+              dark:bg-white/[0.04]
+
               lg:flex
             "
           >
@@ -125,16 +183,23 @@ const Navbar = () => {
                   text-[12px]
                   font-bold
                   !text-[#34445f]
-                  no-underline
+                  !no-underline
                   transition-all
                   duration-300
+
                   hover:bg-white
                   hover:!text-[#0877f9]
+                  hover:!no-underline
                   hover:shadow-sm
+
+                  dark:!text-slate-300
+                  dark:hover:bg-white/[0.07]
+                  dark:hover:!text-[#58c7ff]
                 "
               >
                 {name}
 
+                {/* HOVER UNDERLINE */}
                 <span
                   className="
                     absolute
@@ -149,17 +214,22 @@ const Navbar = () => {
                     duration-300
                     group-hover:w-5
                   "
-                ></span>
+                />
               </a>
             ))}
           </nav>
 
-          {/* RIGHT SIDE */}
+          {/* ================= RIGHT SIDE ================= */}
           <div className="flex items-center gap-2">
+            {/* DESKTOP THEME TOGGLE */}
+            <div className="hidden lg:block">
+              <ThemeToggle />
+            </div>
+
             {/* DOWNLOAD CV */}
             <a
               href={cv}
-              download
+              download="Aiman_Sahar_CV.pdf"
               className="
                 group
                 hidden
@@ -174,12 +244,16 @@ const Navbar = () => {
                 text-[11px]
                 font-bold
                 !text-white
-                no-underline
+                !no-underline
                 shadow-[0_8px_20px_rgba(8,119,249,0.23)]
                 transition
                 duration-300
+
                 hover:-translate-y-0.5
+                hover:!text-white
+                hover:!no-underline
                 hover:shadow-[0_12px_28px_rgba(8,119,249,0.32)]
+
                 lg:inline-flex
               "
             >
@@ -194,12 +268,21 @@ const Navbar = () => {
                   bg-white/15
                 "
               >
-                <i className="bi bi-download text-[11px]"></i>
+                <i className="bi bi-download text-[11px]" />
               </span>
 
               Download CV
 
-              <i className="bi bi-arrow-down-short text-[15px] transition-transform duration-300 group-hover:translate-y-0.5"></i>
+              <i
+                className="
+                  bi
+                  bi-arrow-down-short
+                  text-[15px]
+                  transition-transform
+                  duration-300
+                  group-hover:translate-y-0.5
+                "
+              />
             </a>
 
             {/* MOBILE MENU BUTTON */}
@@ -217,8 +300,15 @@ const Navbar = () => {
                 bg-[#f2f8ff]
                 shadow-sm
                 transition
+                duration-300
+
                 hover:border-blue-300
                 hover:bg-blue-50
+
+                dark:border-white/10
+                dark:bg-white/[0.06]
+                dark:hover:bg-white/[0.10]
+
                 lg:hidden
               "
               data-bs-toggle="offcanvas"
@@ -226,25 +316,59 @@ const Navbar = () => {
               aria-controls="mobileMenu"
               aria-label="Open navigation menu"
             >
-              <i className="bi bi-list text-[25px] text-[#0877f9]"></i>
+              <i
+                className="
+                  bi
+                  bi-list
+                  text-[25px]
+                  text-[#0877f9]
+                  dark:text-[#58c7ff]
+                "
+              />
             </button>
           </div>
         </div>
       </header>
 
-      {/* MOBILE OFFCANVAS */}
+      {/* ================= MOBILE OFFCANVAS ================= */}
       <div
-        className="offcanvas offcanvas-end !w-[300px] border-l border-blue-100"
+        className="
+          offcanvas
+          offcanvas-end
+          !w-[300px]
+          border-l
+          border-blue-100
+
+          dark:!border-white/10
+          dark:!bg-[#071321]
+        "
         tabIndex="-1"
         id="mobileMenu"
       >
-        {/* MOBILE HEADER */}
-        <div className="offcanvas-header border-b border-blue-100 bg-[#f8fbff] px-5 py-4">
+        {/* ================= MOBILE HEADER ================= */}
+        <div
+          className="
+            offcanvas-header
+            border-b
+            border-blue-100
+            bg-[#f8fbff]
+            px-5
+            py-4
+
+            dark:border-white/10
+            dark:bg-[#081727]
+          "
+        >
           {/* MOBILE LOGO */}
           <a
             href="#home"
             data-bs-dismiss="offcanvas"
-            className="flex items-center no-underline"
+            className="
+              flex
+              items-center
+              !no-underline
+              hover:!no-underline
+            "
           >
             <div
               className="
@@ -263,7 +387,7 @@ const Navbar = () => {
                 shadow-[0_8px_20px_rgba(8,119,249,0.25)]
               "
             >
-              {/* TOP GLOW */}
+              {/* GLOW */}
               <span
                 className="
                   absolute
@@ -275,15 +399,28 @@ const Navbar = () => {
                   bg-cyan-300/30
                   blur-md
                 "
-              ></span>
+              />
 
               {/* AS */}
-              <span className="relative flex items-baseline text-[20px] font-black tracking-[-0.11em]">
-                <span className="text-white">A</span>
-                <span className="ml-[1px] text-[#58c7ff]">S</span>
+              <span
+                className="
+                  relative
+                  flex
+                  items-baseline
+                  text-[20px]
+                  font-black
+                  tracking-[-0.11em]
+                "
+              >
+                <span className="text-white">
+                  A
+                </span>
+
+                <span className="ml-[1px] text-[#58c7ff]">
+                  S
+                </span>
               </span>
 
-              {/* BOTTOM LINE */}
               <span
                 className="
                   absolute
@@ -295,25 +432,50 @@ const Navbar = () => {
                   rounded-full
                   bg-white/60
                 "
-              ></span>
+              />
             </div>
           </a>
 
-          {/* CLOSE BUTTON */}
+          {/* CLOSE */}
           <button
             type="button"
-            className="btn-close"
+            className="
+              btn-close
+              dark:invert
+            "
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-          ></button>
+          />
         </div>
 
-        {/* MOBILE BODY */}
-        <div className="offcanvas-body bg-white px-4 py-5">
-          <p className="mb-3 px-3 text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">
+        {/* ================= MOBILE BODY ================= */}
+        <div
+          className="
+            offcanvas-body
+            bg-white
+            px-4
+            py-5
+
+            dark:bg-[#071321]
+          "
+        >
+          <p
+            className="
+              mb-3
+              px-3
+              text-[9px]
+              font-black
+              uppercase
+              tracking-[0.18em]
+              text-slate-400
+
+              dark:text-slate-500
+            "
+          >
             Navigation
           </p>
 
+          {/* LINKS */}
           <div className="flex flex-col gap-1.5">
             {navItems.map(([name, url], index) => (
               <a
@@ -331,10 +493,17 @@ const Navbar = () => {
                   text-[13px]
                   font-bold
                   !text-[#071b3b]
-                  no-underline
+                  !no-underline
                   transition
+                  duration-300
+
                   hover:bg-[#eef7ff]
                   hover:!text-[#0877f9]
+                  hover:!no-underline
+
+                  dark:!text-slate-200
+                  dark:hover:bg-white/[0.06]
+                  dark:hover:!text-[#58c7ff]
                 "
               >
                 <span className="flex items-center gap-3">
@@ -350,6 +519,9 @@ const Navbar = () => {
                       text-[10px]
                       font-black
                       text-[#0877f9]
+
+                      dark:bg-white/[0.06]
+                      dark:text-[#58c7ff]
                     "
                   >
                     0{index + 1}
@@ -358,7 +530,21 @@ const Navbar = () => {
                   {name}
                 </span>
 
-                <i className="bi bi-chevron-right text-[11px] text-slate-300 transition group-hover:translate-x-1 group-hover:text-[#0877f9]"></i>
+                <i
+                  className="
+                    bi
+                    bi-chevron-right
+                    text-[11px]
+                    text-slate-300
+                    transition
+
+                    group-hover:translate-x-1
+                    group-hover:text-[#0877f9]
+
+                    dark:text-slate-600
+                    dark:group-hover:text-[#58c7ff]
+                  "
+                />
               </a>
             ))}
           </div>
@@ -366,7 +552,7 @@ const Navbar = () => {
           {/* MOBILE DOWNLOAD CV */}
           <a
             href={cv}
-            download
+            download="Aiman_Sahar_CV.pdf"
             className="
               mt-6
               flex
@@ -383,27 +569,65 @@ const Navbar = () => {
               text-[12px]
               font-bold
               !text-white
-              no-underline
+              !no-underline
               shadow-lg
               shadow-blue-200
               transition
+
               hover:-translate-y-0.5
+              hover:!text-white
+              hover:!no-underline
+
+              dark:shadow-none
             "
           >
-            <i className="bi bi-download"></i>
+            <i className="bi bi-download" />
+
             Download CV
           </a>
 
           {/* AVAILABILITY */}
-          <div className="mt-7 rounded-xl border border-blue-100 bg-[#f8fbff] p-4">
-            <p className="m-0 text-[10px] font-bold text-[#071b3b]">
+          <div
+            className="
+              mt-7
+              rounded-xl
+              border
+              border-blue-100
+              bg-[#f8fbff]
+              p-4
+
+              dark:border-white/10
+              dark:bg-white/[0.04]
+            "
+          >
+            <p
+              className="
+                m-0
+                text-[10px]
+                font-bold
+                text-[#071b3b]
+
+                dark:text-white
+              "
+            >
               Available for opportunities
             </p>
 
             <div className="mt-2 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-green-500"></span>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
 
-              <span className="text-[9px] text-slate-500">
+                <span className="relative h-2 w-2 rounded-full bg-green-500" />
+              </span>
+
+              <span
+                className="
+                  text-[9px]
+                  text-slate-500
+
+                  dark:text-slate-400
+                "
+              >
                 Freelance • Internship • Projects
               </span>
             </div>

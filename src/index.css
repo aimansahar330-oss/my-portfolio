@@ -258,3 +258,24 @@ body {
     transform: translateY(-4px);
   }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  background: #ffffff;
+}
+
+html.dark {
+  background: #06111f;
+  color-scheme: dark;
+}
+
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+html.dark body {
+  background: #06111f;
+}
