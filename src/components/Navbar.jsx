@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import cv from "../assets/Aiman_Sahar_CV.pdf";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navItems = [
     ["Home", "#home"],
     ["About", "#about"],
@@ -9,6 +12,38 @@ const Navbar = () => {
     ["Projects", "#projects"],
     ["Services", "#services"],
   ];
+
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Close menu with Escape key
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <>
@@ -22,12 +57,9 @@ const Navbar = () => {
           left-0
           top-0
           z-50
-
           w-full
-
           px-3
           pt-3
-
           sm:px-5
           lg:px-6
         "
@@ -36,25 +68,18 @@ const Navbar = () => {
           className="
             relative
             mx-auto
-
             flex
             h-[70px]
             max-w-[1280px]
             items-center
             justify-between
-
             rounded-2xl
             border
-
             !border-white/70
             !bg-white/90
-
             px-4
-
             shadow-[0_10px_40px_rgba(7,27,59,0.08)]
-
             backdrop-blur-xl
-
             transition-all
             duration-300
 
@@ -72,44 +97,35 @@ const Navbar = () => {
 
           <a
             href="#home"
+            onClick={handleNavClick}
             className="
               group
               flex
               items-center
-
               !no-underline
-
               hover:!no-underline
             "
           >
             <div
               className="
                 relative
-
                 flex
                 h-[46px]
                 w-[46px]
                 items-center
                 justify-center
-
                 overflow-hidden
-
                 rounded-[14px]
-
                 bg-gradient-to-br
                 from-[#071b3b]
                 via-[#0a356b]
                 to-[#0877f9]
-
                 shadow-[0_10px_25px_rgba(8,119,249,0.25)]
-
                 transition
                 duration-300
 
                 group-hover:-translate-y-0.5
                 group-hover:rotate-[-2deg]
-
-                dark:shadow-[0_10px_28px_rgba(8,119,249,0.22)]
               "
             >
               {/* GLOW */}
@@ -118,14 +134,10 @@ const Navbar = () => {
                   absolute
                   -right-3
                   -top-3
-
                   h-8
                   w-8
-
                   rounded-full
-
                   !bg-cyan-300/30
-
                   blur-md
                 "
               />
@@ -136,15 +148,12 @@ const Navbar = () => {
                   relative
                   flex
                   items-baseline
-
                   text-[20px]
                   font-black
                   tracking-[-0.11em]
                 "
               >
-                <span className="!text-white">
-                  A
-                </span>
+                <span className="!text-white">A</span>
 
                 <span className="ml-[1px] !text-[#58c7ff]">
                   S
@@ -157,39 +166,15 @@ const Navbar = () => {
                   absolute
                   bottom-[5px]
                   left-1/2
-
                   h-[2px]
                   w-5
-
                   -translate-x-1/2
-
                   rounded-full
-
                   !bg-white/60
                 "
               />
             </div>
           </a>
-
-          {/* ================================================= */}
-          {/* MOBILE CENTER THEME TOGGLE */}
-          {/* ================================================= */}
-
-          <div
-            className="
-              absolute
-              left-1/2
-              top-1/2
-              z-20
-
-              -translate-x-1/2
-              -translate-y-1/2
-
-              lg:hidden
-            "
-          >
-            <ThemeToggle />
-          </div>
 
           {/* ================================================= */}
           {/* DESKTOP NAV */}
@@ -199,15 +184,11 @@ const Navbar = () => {
             className="
               hidden
               items-center
-
               rounded-xl
               border
-
               !border-blue-100
               !bg-[#f7fbff]
-
               p-1.5
-
               transition-all
               duration-300
 
@@ -224,18 +205,13 @@ const Navbar = () => {
                 className="
                   group
                   relative
-
                   rounded-lg
-
                   px-4
                   py-2
-
                   text-[12px]
                   font-bold
-
                   !text-[#34445f]
                   !no-underline
-
                   transition-all
                   duration-300
 
@@ -245,7 +221,6 @@ const Navbar = () => {
                   hover:shadow-sm
 
                   dark:!text-slate-300
-
                   dark:hover:!bg-white/[0.07]
                   dark:hover:!text-[#58c7ff]
                   dark:hover:shadow-none
@@ -258,19 +233,13 @@ const Navbar = () => {
                     absolute
                     bottom-[3px]
                     left-1/2
-
                     h-[2px]
                     w-0
-
                     -translate-x-1/2
-
                     rounded-full
-
                     !bg-[#0877f9]
-
                     transition-all
                     duration-300
-
                     group-hover:w-5
 
                     dark:!bg-[#58c7ff]
@@ -286,12 +255,13 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2">
             {/* DESKTOP THEME TOGGLE */}
+
             <div className="hidden lg:block">
               <ThemeToggle />
             </div>
 
             {/* ================================================= */}
-            {/* DOWNLOAD CV */}
+            {/* DESKTOP DOWNLOAD CV */}
             {/* ================================================= */}
 
             <a
@@ -299,28 +269,20 @@ const Navbar = () => {
               download="Aiman_Sahar_CV.pdf"
               className="
                 group
-
                 hidden
                 items-center
                 gap-2.5
-
                 rounded-xl
-
                 bg-gradient-to-r
                 from-[#0877f9]
                 to-[#0757c8]
-
                 px-5
                 py-3
-
                 text-[11px]
                 font-bold
-
                 !text-white
                 !no-underline
-
                 shadow-[0_8px_20px_rgba(8,119,249,0.23)]
-
                 transition
                 duration-300
 
@@ -343,9 +305,7 @@ const Navbar = () => {
                   w-6
                   items-center
                   justify-center
-
                   rounded-md
-
                   !bg-white/15
                 "
               >
@@ -358,12 +318,9 @@ const Navbar = () => {
                 className="
                   bi
                   bi-arrow-down-short
-
                   text-[15px]
-
                   transition-transform
                   duration-300
-
                   group-hover:translate-y-0.5
                 "
               />
@@ -375,21 +332,20 @@ const Navbar = () => {
 
             <button
               type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={menuOpen}
               className="
                 flex
                 h-11
                 w-11
                 items-center
                 justify-center
-
                 rounded-xl
                 border
-
                 !border-blue-100
                 !bg-[#f2f8ff]
-
                 shadow-sm
-
                 transition
                 duration-300
 
@@ -405,21 +361,20 @@ const Navbar = () => {
 
                 lg:hidden
               "
-              data-bs-toggle="offcanvas"
-              data-bs-target="#mobileMenu"
-              aria-controls="mobileMenu"
-              aria-label="Open navigation menu"
             >
               <i
-                className="
+                className={`
                   bi
-                  bi-list
-
+                  ${
+                    menuOpen
+                      ? "bi-x"
+                      : "bi-list"
+                  }
                   !text-[25px]
                   !text-[#0877f9]
 
                   dark:!text-[#58c7ff]
-                "
+                `}
               />
             </button>
           </div>
@@ -427,26 +382,63 @@ const Navbar = () => {
       </header>
 
       {/* ================================================= */}
-      {/* MOBILE OFFCANVAS */}
+      {/* MOBILE MENU OVERLAY */}
       {/* ================================================= */}
 
       <div
-        className="
-          offcanvas
-          offcanvas-end
+        onClick={() => setMenuOpen(false)}
+        className={`
+          fixed
+          inset-0
+          z-[55]
+          bg-[#031630]/40
+          backdrop-blur-[3px]
+          transition-all
+          duration-300
+          lg:hidden
 
-          !w-[300px]
+          ${
+            menuOpen
+              ? "visible opacity-100"
+              : "invisible opacity-0"
+          }
+        `}
+      />
 
+      {/* ================================================= */}
+      {/* MOBILE MENU */}
+      {/* ================================================= */}
+
+      <aside
+        className={`
+          fixed
+          right-0
+          top-0
+          z-[60]
+          flex
+          h-screen
+          w-[300px]
+          max-w-[88vw]
+          flex-col
           border-l
-
           !border-blue-100
           !bg-white
+          shadow-2xl
+          transition-transform
+          duration-300
+          ease-out
 
           dark:!border-white/10
           dark:!bg-[#071321]
-        "
-        tabIndex="-1"
-        id="mobileMenu"
+
+          lg:hidden
+
+          ${
+            menuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+          }
+        `}
       >
         {/* ================================================= */}
         {/* MOBILE MENU HEADER */}
@@ -454,13 +446,13 @@ const Navbar = () => {
 
         <div
           className="
-            offcanvas-header
-
+            flex
+            shrink-0
+            items-center
+            justify-between
             border-b
-
             !border-blue-100
             !bg-[#f8fbff]
-
             px-5
             py-4
 
@@ -469,37 +461,31 @@ const Navbar = () => {
           "
         >
           {/* LOGO */}
+
           <a
             href="#home"
-            data-bs-dismiss="offcanvas"
+            onClick={handleNavClick}
             className="
               flex
               items-center
-
               !no-underline
-
               hover:!no-underline
             "
           >
             <div
               className="
                 relative
-
                 flex
                 h-[46px]
                 w-[46px]
                 items-center
                 justify-center
-
                 overflow-hidden
-
                 rounded-[14px]
-
                 bg-gradient-to-br
                 from-[#071b3b]
                 via-[#0a356b]
                 to-[#0877f9]
-
                 shadow-[0_8px_20px_rgba(8,119,249,0.25)]
               "
             >
@@ -508,14 +494,10 @@ const Navbar = () => {
                   absolute
                   -right-3
                   -top-3
-
                   h-8
                   w-8
-
                   rounded-full
-
                   !bg-cyan-300/30
-
                   blur-md
                 "
               />
@@ -525,15 +507,12 @@ const Navbar = () => {
                   relative
                   flex
                   items-baseline
-
                   text-[20px]
                   font-black
                   tracking-[-0.11em]
                 "
               >
-                <span className="!text-white">
-                  A
-                </span>
+                <span className="!text-white">A</span>
 
                 <span className="ml-[1px] !text-[#58c7ff]">
                   S
@@ -545,32 +524,48 @@ const Navbar = () => {
                   absolute
                   bottom-[5px]
                   left-1/2
-
                   h-[2px]
                   w-5
-
                   -translate-x-1/2
-
                   rounded-full
-
                   !bg-white/60
                 "
               />
             </div>
           </a>
 
-          {/* CLOSE BUTTON */}
+          {/* CLOSE */}
+
           <button
             type="button"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close navigation menu"
             className="
-              btn-close
+              flex
+              h-10
+              w-10
+              items-center
+              justify-center
+              rounded-xl
+              border
+              !border-blue-100
+              !bg-white
+              !text-[#071b3b]
+              transition
+              duration-300
 
-              dark:invert
-              dark:opacity-80
+              hover:!border-blue-300
+              hover:!bg-blue-50
+
+              dark:!border-white/10
+              dark:!bg-white/[0.05]
+              dark:!text-white
+
+              dark:hover:!bg-white/[0.10]
             "
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          />
+          >
+            <i className="bi bi-x-lg text-[15px]" />
+          </button>
         </div>
 
         {/* ================================================= */}
@@ -579,27 +574,25 @@ const Navbar = () => {
 
         <div
           className="
-            offcanvas-body
-
+            flex-1
+            overflow-y-auto
             !bg-white
-
             px-4
             py-5
 
             dark:!bg-[#071321]
           "
         >
-          {/* NAVIGATION TITLE */}
+          {/* TITLE */}
+
           <p
             className="
               mb-3
               px-3
-
               text-[9px]
               font-black
               uppercase
               tracking-[0.18em]
-
               !text-slate-400
 
               dark:!text-slate-500
@@ -617,25 +610,19 @@ const Navbar = () => {
               <a
                 key={name}
                 href={url}
-                data-bs-dismiss="offcanvas"
+                onClick={handleNavClick}
                 className="
                   group
-
                   flex
                   items-center
                   justify-between
-
                   rounded-xl
-
                   px-4
                   py-3.5
-
                   text-[13px]
                   font-bold
-
                   !text-[#071b3b]
                   !no-underline
-
                   transition
                   duration-300
 
@@ -644,7 +631,6 @@ const Navbar = () => {
                   hover:!no-underline
 
                   dark:!text-slate-200
-
                   dark:hover:!bg-white/[0.06]
                   dark:hover:!text-[#58c7ff]
                 "
@@ -657,14 +643,10 @@ const Navbar = () => {
                       w-7
                       items-center
                       justify-center
-
                       rounded-lg
-
                       !bg-blue-50
-
                       text-[10px]
                       font-black
-
                       !text-[#0877f9]
 
                       dark:!bg-white/[0.06]
@@ -681,13 +663,9 @@ const Navbar = () => {
                   className="
                     bi
                     bi-chevron-right
-
                     text-[11px]
-
                     !text-slate-300
-
                     transition
-
                     group-hover:translate-x-1
                     group-hover:!text-[#0877f9]
 
@@ -706,23 +684,17 @@ const Navbar = () => {
           <div
             className="
               mt-5
-
               flex
               items-center
               justify-between
               gap-3
-
               rounded-2xl
               border
-
               !border-blue-100
               !bg-[#f8fbff]
-
               px-4
               py-3
-
               shadow-sm
-
               transition-all
               duration-300
 
@@ -731,9 +703,7 @@ const Navbar = () => {
               dark:shadow-none
             "
           >
-            {/* LEFT SIDE */}
             <div className="flex min-w-0 items-center gap-3">
-              {/* APPEARANCE ICON */}
               <div
                 className="
                   flex
@@ -742,12 +712,9 @@ const Navbar = () => {
                   shrink-0
                   items-center
                   justify-center
-
                   rounded-xl
-
                   !bg-blue-50
                   !text-[#0877f9]
-
                   transition-colors
                   duration-300
 
@@ -758,15 +725,12 @@ const Navbar = () => {
                 <i className="bi bi-circle-half text-[16px]" />
               </div>
 
-              {/* TEXT */}
               <div className="min-w-0">
                 <p
                   className="
                     m-0
-
                     text-[10px]
                     font-black
-
                     !text-[#071b3b]
 
                     dark:!text-white
@@ -779,11 +743,8 @@ const Navbar = () => {
                   className="
                     mt-0.5
                     block
-
                     whitespace-nowrap
-
                     text-[8.5px]
-
                     !text-slate-500
 
                     dark:!text-slate-400
@@ -794,44 +755,36 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* ACTUAL TOGGLE */}
             <ThemeToggle />
           </div>
 
           {/* ================================================= */}
-          {/* DOWNLOAD CV MOBILE */}
+          {/* DOWNLOAD CV */}
           {/* ================================================= */}
 
           <a
             href={cv}
             download="Aiman_Sahar_CV.pdf"
+            onClick={handleNavClick}
             className="
               mt-5
-
               flex
               w-full
               items-center
               justify-center
               gap-3
-
               rounded-xl
-
               bg-gradient-to-r
               from-[#0877f9]
               to-[#0757c8]
-
               px-5
               py-3.5
-
               text-[12px]
               font-bold
-
               !text-white
               !no-underline
-
               shadow-lg
               shadow-blue-200
-
               transition
               duration-300
 
@@ -851,9 +804,7 @@ const Navbar = () => {
                 w-7
                 items-center
                 justify-center
-
                 rounded-lg
-
                 !bg-white/15
               "
             >
@@ -870,15 +821,11 @@ const Navbar = () => {
           <div
             className="
               mt-6
-
               rounded-xl
               border
-
               !border-blue-100
               !bg-[#f8fbff]
-
               p-4
-
               transition-colors
               duration-300
 
@@ -895,9 +842,7 @@ const Navbar = () => {
                   shrink-0
                   items-center
                   justify-center
-
                   rounded-lg
-
                   !bg-green-50
                   !text-green-500
 
@@ -912,10 +857,8 @@ const Navbar = () => {
                 <p
                   className="
                     m-0
-
                     text-[10px]
                     font-bold
-
                     !text-[#071b3b]
 
                     dark:!text-white
@@ -952,7 +895,6 @@ const Navbar = () => {
                   <span
                     className="
                       text-[9px]
-
                       !text-slate-500
 
                       dark:!text-slate-400
@@ -965,7 +907,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };
