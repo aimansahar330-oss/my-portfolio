@@ -1,6 +1,7 @@
 import pharmago from "../assets/pharmago.png";
 import taskmanager from "../assets/taskmanager.png";
 import honeyglow from "../assets/honeyglow.png";
+import weatherapp from "../assets/weatherapp.png";
 
 const projects = [
   {
@@ -70,6 +71,29 @@ const projects = [
 
     sourceCode: "",
   },
+  {
+  image: weatherapp,
+
+  title: "Weather Now — Real-Time Weather App",
+
+  description:
+    "A fully functional weather application with city search, current weather conditions, 7-day forecast, hourly forecast, geolocation support, responsive design and real-time weather data powered by Open-Meteo.",
+
+  tech: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "JavaScript",
+    "Open-Meteo API",
+    "Responsive UI",
+  ],
+
+  liveDemo:
+    "https://weather-app-project-git-main-aimansahar330-oss-projects.vercel.app/",
+
+  sourceCode: "",
+},
+
 ];
 
 const Projects = () => {
