@@ -1,94 +1,77 @@
-import { useEffect, useState } from "react";
-import cv from "../assets/Aiman_Sahar_CV.pdf";
+import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+
+const navItems = [
+  {
+    name: "Home",
+    href: "#home",
+  },
+  {
+    name: "About",
+    href: "#about",
+  },
+  {
+    name: "Skills",
+    href: "#skills",
+  },
+  {
+    name: "Projects",
+    href: "#projects",
+  },
+  {
+    name: "Services",
+    href: "#services",
+  },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = [
-    ["Home", "#home"],
-    ["About", "#about"],
-    ["Skills", "#skills"],
-    ["Projects", "#projects"],
-    ["Services", "#services"],
-  ];
-
-  // Prevent background scrolling when mobile menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  // Close menu with Escape key
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("keydown", handleEscape);
-
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
-
-  const handleNavClick = () => {
+  const closeMenu = () => {
     setMenuOpen(false);
   };
 
   return (
-    <>
-      {/* ================================================= */}
-      {/* NAVBAR */}
-      {/* ================================================= */}
+    <header
+      className="
+        sticky
+        top-0
+        z-50
+        w-full
+        border-b
+        border-blue-100
+        bg-white/95
+        shadow-sm
+        backdrop-blur-xl
 
-      <header
+        dark:border-white/10
+        dark:bg-[#07111f]/95
+      "
+    >
+      <nav
         className="
-          fixed
-          left-0
-          top-0
-          z-50
+          mx-auto
           w-full
-          px-3
-          pt-3
-          sm:px-5
-          lg:px-6
+          max-w-[1320px]
+          px-4
+          sm:px-6
+          lg:px-8
         "
       >
+        {/* ================================================= */}
+        {/* MAIN NAVBAR */}
+        {/* ================================================= */}
+
         <div
           className="
-            relative
-            mx-auto
-            flex
-            h-[70px]
-            max-w-[1280px]
+            grid
+            h-[72px]
+            grid-cols-[1fr_auto_1fr]
             items-center
-            justify-between
-            rounded-2xl
-            border
-            !border-white/70
-            !bg-white/90
-            px-4
-            shadow-[0_10px_40px_rgba(7,27,59,0.08)]
-            backdrop-blur-xl
-            transition-all
-            duration-300
 
-            dark:!border-white/10
-            dark:!bg-[#071321]/90
-            dark:shadow-[0_10px_40px_rgba(0,0,0,0.28)]
-
-            sm:px-5
-            lg:px-6
+            lg:flex
+            lg:h-[76px]
+            lg:justify-between
           "
         >
           {/* ================================================= */}
@@ -97,545 +80,300 @@ const Navbar = () => {
 
           <a
             href="#home"
-            onClick={handleNavClick}
+            onClick={closeMenu}
             className="
-              group
               flex
+              w-fit
               items-center
+              gap-1
               !no-underline
-              hover:!no-underline
             "
           >
-            <div
+            <span
               className="
-                relative
-                flex
-                h-[46px]
-                w-[46px]
-                items-center
-                justify-center
-                overflow-hidden
-                rounded-[14px]
-                bg-gradient-to-br
-                from-[#071b3b]
-                via-[#0a356b]
-                to-[#0877f9]
-                shadow-[0_10px_25px_rgba(8,119,249,0.25)]
-                transition
-                duration-300
+                text-[18px]
+                font-black
+                tracking-[-0.04em]
+                text-[#071b3b]
 
-                group-hover:-translate-y-0.5
-                group-hover:rotate-[-2deg]
+                sm:text-[20px]
+
+                dark:text-white
               "
             >
-              {/* GLOW */}
-              <span
-                className="
-                  absolute
-                  -right-3
-                  -top-3
-                  h-8
-                  w-8
-                  rounded-full
-                  !bg-cyan-300/30
-                  blur-md
-                "
-              />
+              AIMAN
+            </span>
 
-              {/* AS */}
-              <span
-                className="
-                  relative
-                  flex
-                  items-baseline
-                  text-[20px]
-                  font-black
-                  tracking-[-0.11em]
-                "
-              >
-                <span className="!text-white">A</span>
+            <span
+              className="
+                text-[18px]
+                font-black
+                tracking-[-0.04em]
+                text-[#0877f9]
 
-                <span className="ml-[1px] !text-[#58c7ff]">
-                  S
-                </span>
-              </span>
+                sm:text-[20px]
 
-              {/* LINE */}
-              <span
-                className="
-                  absolute
-                  bottom-[5px]
-                  left-1/2
-                  h-[2px]
-                  w-5
-                  -translate-x-1/2
-                  rounded-full
-                  !bg-white/60
-                "
-              />
-            </div>
+                dark:text-[#58c7ff]
+              "
+            >
+              SAHAR
+            </span>
           </a>
 
           {/* ================================================= */}
-          {/* DESKTOP NAV */}
+          {/* DESKTOP NAVIGATION */}
           {/* ================================================= */}
 
-          <nav
+          <div
             className="
               hidden
               items-center
-              rounded-xl
-              border
-              !border-blue-100
-              !bg-[#f7fbff]
-              p-1.5
-              transition-all
-              duration-300
-
-              dark:!border-white/10
-              dark:!bg-white/[0.04]
-
+              gap-7
               lg:flex
             "
           >
-            {navItems.map(([name, url]) => (
+            {navItems.map((item) => (
               <a
-                key={name}
-                href={url}
+                key={item.name}
+                href={item.href}
                 className="
-                  group
                   relative
-                  rounded-lg
-                  px-4
                   py-2
-                  text-[12px]
+                  text-[11px]
                   font-bold
-                  !text-[#34445f]
+                  !text-[#071b3b]
                   !no-underline
-                  transition-all
+
+                  transition
                   duration-300
 
-                  hover:!bg-white
                   hover:!text-[#0877f9]
-                  hover:!no-underline
-                  hover:shadow-sm
 
-                  dark:!text-slate-300
-                  dark:hover:!bg-white/[0.07]
+                  dark:!text-slate-200
                   dark:hover:!text-[#58c7ff]
-                  dark:hover:shadow-none
+
+                  after:absolute
+                  after:bottom-0
+                  after:left-1/2
+                  after:h-[2px]
+                  after:w-0
+                  after:-translate-x-1/2
+                  after:rounded-full
+                  after:bg-[#0877f9]
+                  after:transition-all
+                  after:duration-300
+                  hover:after:w-full
+
+                  dark:after:bg-[#58c7ff]
                 "
               >
-                {name}
-
-                <span
-                  className="
-                    absolute
-                    bottom-[3px]
-                    left-1/2
-                    h-[2px]
-                    w-0
-                    -translate-x-1/2
-                    rounded-full
-                    !bg-[#0877f9]
-                    transition-all
-                    duration-300
-                    group-hover:w-5
-
-                    dark:!bg-[#58c7ff]
-                  "
-                />
+                {item.name}
               </a>
             ))}
-          </nav>
+          </div>
 
           {/* ================================================= */}
-          {/* RIGHT SIDE */}
+          {/* DESKTOP RIGHT SIDE */}
           {/* ================================================= */}
 
-          <div className="flex items-center gap-2">
-            {/* DESKTOP THEME TOGGLE */}
+          <div
+            className="
+              hidden
+              items-center
+              gap-3
+              lg:flex
+            "
+          >
+            {/* DARK MODE */}
+            <ThemeToggle />
 
-            <div className="hidden lg:block">
-              <ThemeToggle />
-            </div>
-
-            {/* ================================================= */}
-            {/* DESKTOP DOWNLOAD CV */}
-            {/* ================================================= */}
-
+            {/* CV */}
             <a
-              href={cv}
-              download="Aiman_Sahar_CV.pdf"
+              href="/Aiman-Sahar-CV.pdf"
+              download
               className="
-                group
-                hidden
+                inline-flex
                 items-center
-                gap-2.5
+                gap-2
                 rounded-xl
-                bg-gradient-to-r
-                from-[#0877f9]
-                to-[#0757c8]
-                px-5
-                py-3
-                text-[11px]
+                bg-[#071b3b]
+                px-4
+                py-2.5
+                text-[10px]
                 font-bold
                 !text-white
                 !no-underline
-                shadow-[0_8px_20px_rgba(8,119,249,0.23)]
-                transition
-                duration-300
 
-                hover:-translate-y-0.5
-                hover:!text-white
-                hover:!no-underline
-                hover:shadow-[0_12px_28px_rgba(8,119,249,0.32)]
-
-                dark:from-[#118cff]
-                dark:to-[#0877f9]
-                dark:shadow-[0_8px_25px_rgba(8,119,249,.18)]
-
-                lg:inline-flex
-              "
-            >
-              <span
-                className="
-                  flex
-                  h-6
-                  w-6
-                  items-center
-                  justify-center
-                  rounded-md
-                  !bg-white/15
-                "
-              >
-                <i className="bi bi-download text-[11px]" />
-              </span>
-
-              Download CV
-
-              <i
-                className="
-                  bi
-                  bi-arrow-down-short
-                  text-[15px]
-                  transition-transform
-                  duration-300
-                  group-hover:translate-y-0.5
-                "
-              />
-            </a>
-
-            {/* ================================================= */}
-            {/* MOBILE HAMBURGER */}
-            {/* ================================================= */}
-
-            <button
-              type="button"
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open navigation menu"
-              aria-expanded={menuOpen}
-              className="
-                flex
-                h-11
-                w-11
-                items-center
-                justify-center
-                rounded-xl
-                border
-                !border-blue-100
-                !bg-[#f2f8ff]
                 shadow-sm
                 transition
                 duration-300
 
-                hover:!border-blue-300
-                hover:!bg-blue-50
+                hover:-translate-y-0.5
+                hover:bg-[#0877f9]
+                hover:shadow-lg
+                hover:shadow-blue-200
 
-                dark:!border-white/10
-                dark:!bg-white/[0.06]
+                dark:bg-[#0877f9]
+                dark:hover:bg-[#58c7ff]
+                dark:hover:!text-[#071b3b]
+              "
+            >
+              <i className="bi bi-download" />
+
+              Download CV
+            </a>
+          </div>
+
+          {/* ================================================= */}
+          {/* MOBILE CENTER TOGGLE */}
+          {/* ================================================= */}
+
+          <div
+            className="
+              flex
+              items-center
+              justify-center
+
+              lg:hidden
+            "
+          >
+            <ThemeToggle />
+          </div>
+
+          {/* ================================================= */}
+          {/* MOBILE HAMBURGER */}
+          {/* ================================================= */}
+
+          <div
+            className="
+              flex
+              items-center
+              justify-end
+
+              lg:hidden
+            "
+          >
+            <button
+              type="button"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={
+                menuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              aria-expanded={menuOpen}
+              className="
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-xl
+                border
+                border-blue-200
+                bg-white
+                text-[#071b3b]
+                shadow-sm
+
+                transition
+                duration-300
+
+                hover:border-[#0877f9]
+                hover:bg-blue-50
+
+                dark:border-white/15
+                dark:bg-[#17263a]
+                dark:text-white
                 dark:shadow-none
 
-                dark:hover:!border-white/20
-                dark:hover:!bg-white/[0.10]
-
-                lg:hidden
+                dark:hover:border-white/30
+                dark:hover:bg-white/10
               "
             >
               <i
                 className={`
                   bi
+                  text-[19px]
+                  transition-transform
+                  duration-300
+
                   ${
                     menuOpen
-                      ? "bi-x"
-                      : "bi-list"
+                      ? "bi-x-lg rotate-90"
+                      : "bi-list rotate-0"
                   }
-                  !text-[25px]
-                  !text-[#0877f9]
-
-                  dark:!text-[#58c7ff]
                 `}
               />
             </button>
           </div>
         </div>
-      </header>
 
-      {/* ================================================= */}
-      {/* MOBILE MENU OVERLAY */}
-      {/* ================================================= */}
-
-      <div
-        onClick={() => setMenuOpen(false)}
-        className={`
-          fixed
-          inset-0
-          z-[55]
-          bg-[#031630]/40
-          backdrop-blur-[3px]
-          transition-all
-          duration-300
-          lg:hidden
-
-          ${
-            menuOpen
-              ? "visible opacity-100"
-              : "invisible opacity-0"
-          }
-        `}
-      />
-
-      {/* ================================================= */}
-      {/* MOBILE MENU */}
-      {/* ================================================= */}
-
-      <aside
-        className={`
-          fixed
-          right-0
-          top-0
-          z-[60]
-          flex
-          h-screen
-          w-[300px]
-          max-w-[88vw]
-          flex-col
-          border-l
-          !border-blue-100
-          !bg-white
-          shadow-2xl
-          transition-transform
-          duration-300
-          ease-out
-
-          dark:!border-white/10
-          dark:!bg-[#071321]
-
-          lg:hidden
-
-          ${
-            menuOpen
-              ? "translate-x-0"
-              : "translate-x-full"
-          }
-        `}
-      >
         {/* ================================================= */}
-        {/* MOBILE MENU HEADER */}
+        {/* MOBILE MENU */}
         {/* ================================================= */}
 
         <div
-          className="
-            flex
-            shrink-0
-            items-center
-            justify-between
-            border-b
-            !border-blue-100
-            !bg-[#f8fbff]
-            px-5
-            py-4
+          className={`
+            overflow-hidden
+            transition-all
+            duration-300
+            lg:hidden
 
-            dark:!border-white/10
-            dark:!bg-[#081727]
-          "
+            ${
+              menuOpen
+                ? "max-h-[500px] pb-5 opacity-100"
+                : "max-h-0 pb-0 opacity-0"
+            }
+          `}
         >
-          {/* LOGO */}
-
-          <a
-            href="#home"
-            onClick={handleNavClick}
+          <div
             className="
-              flex
-              items-center
-              !no-underline
-              hover:!no-underline
-            "
-          >
-            <div
-              className="
-                relative
-                flex
-                h-[46px]
-                w-[46px]
-                items-center
-                justify-center
-                overflow-hidden
-                rounded-[14px]
-                bg-gradient-to-br
-                from-[#071b3b]
-                via-[#0a356b]
-                to-[#0877f9]
-                shadow-[0_8px_20px_rgba(8,119,249,0.25)]
-              "
-            >
-              <span
-                className="
-                  absolute
-                  -right-3
-                  -top-3
-                  h-8
-                  w-8
-                  rounded-full
-                  !bg-cyan-300/30
-                  blur-md
-                "
-              />
-
-              <span
-                className="
-                  relative
-                  flex
-                  items-baseline
-                  text-[20px]
-                  font-black
-                  tracking-[-0.11em]
-                "
-              >
-                <span className="!text-white">A</span>
-
-                <span className="ml-[1px] !text-[#58c7ff]">
-                  S
-                </span>
-              </span>
-
-              <span
-                className="
-                  absolute
-                  bottom-[5px]
-                  left-1/2
-                  h-[2px]
-                  w-5
-                  -translate-x-1/2
-                  rounded-full
-                  !bg-white/60
-                "
-              />
-            </div>
-          </a>
-
-          {/* CLOSE */}
-
-          <button
-            type="button"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close navigation menu"
-            className="
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-xl
+              rounded-2xl
               border
-              !border-blue-100
-              !bg-white
-              !text-[#071b3b]
-              transition
-              duration-300
+              border-blue-100
+              bg-[#f8fbff]
+              p-3
+              shadow-sm
 
-              hover:!border-blue-300
-              hover:!bg-blue-50
-
-              dark:!border-white/10
-              dark:!bg-white/[0.05]
-              dark:!text-white
-
-              dark:hover:!bg-white/[0.10]
+              dark:border-white/10
+              dark:bg-[#0d1b2d]
+              dark:shadow-none
             "
           >
-            <i className="bi bi-x-lg text-[15px]" />
-          </button>
-        </div>
+            {/* ================================================= */}
+            {/* MOBILE NAV LINKS */}
+            {/* ================================================= */}
 
-        {/* ================================================= */}
-        {/* MOBILE MENU BODY */}
-        {/* ================================================= */}
+            <div className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                    rounded-xl
+                    px-4
+                    py-3
 
-        <div
-          className="
-            flex-1
-            overflow-y-auto
-            !bg-white
-            px-4
-            py-5
+                    text-[11px]
+                    font-bold
+                    !text-[#071b3b]
+                    !no-underline
 
-            dark:!bg-[#071321]
-          "
-        >
-          {/* TITLE */}
+                    transition
+                    duration-300
 
-          <p
-            className="
-              mb-3
-              px-3
-              text-[9px]
-              font-black
-              uppercase
-              tracking-[0.18em]
-              !text-slate-400
+                    hover:bg-blue-50
+                    hover:!text-[#0877f9]
 
-              dark:!text-slate-500
-            "
-          >
-            Navigation
-          </p>
-
-          {/* ================================================= */}
-          {/* NAV LINKS */}
-          {/* ================================================= */}
-
-          <div className="flex flex-col gap-1.5">
-            {navItems.map(([name, url], index) => (
-              <a
-                key={name}
-                href={url}
-                onClick={handleNavClick}
-                className="
-                  group
-                  flex
-                  items-center
-                  justify-between
-                  rounded-xl
-                  px-4
-                  py-3.5
-                  text-[13px]
-                  font-bold
-                  !text-[#071b3b]
-                  !no-underline
-                  transition
-                  duration-300
-
-                  hover:!bg-[#eef7ff]
-                  hover:!text-[#0877f9]
-                  hover:!no-underline
-
-                  dark:!text-slate-200
-                  dark:hover:!bg-white/[0.06]
-                  dark:hover:!text-[#58c7ff]
-                "
-              >
-                <span className="flex items-center gap-3">
+                    dark:!text-slate-200
+                    dark:hover:bg-white/[0.06]
+                    dark:hover:!text-[#58c7ff]
+                  "
+                >
                   <span
                     className="
                       flex
@@ -644,271 +382,91 @@ const Navbar = () => {
                       items-center
                       justify-center
                       rounded-lg
-                      !bg-blue-50
-                      text-[10px]
-                      font-black
-                      !text-[#0877f9]
+                      bg-blue-100
+                      text-[#0877f9]
 
-                      dark:!bg-white/[0.06]
-                      dark:!text-[#58c7ff]
+                      dark:bg-[#0877f9]/15
+                      dark:text-[#58c7ff]
                     "
                   >
-                    0{index + 1}
+                    <i
+                      className={`
+                        bi
+                        ${
+                          item.name === "Home"
+                            ? "bi-house-fill"
+                            : item.name === "About"
+                            ? "bi-person-fill"
+                            : item.name === "Skills"
+                            ? "bi-code-slash"
+                            : item.name === "Projects"
+                            ? "bi-grid-fill"
+                            : "bi-layers-fill"
+                        }
+                      `}
+                    />
                   </span>
 
-                  {name}
-                </span>
+                  {item.name}
 
-                <i
-                  className="
-                    bi
-                    bi-chevron-right
-                    text-[11px]
-                    !text-slate-300
-                    transition
-                    group-hover:translate-x-1
-                    group-hover:!text-[#0877f9]
-
-                    dark:!text-slate-600
-                    dark:group-hover:!text-[#58c7ff]
-                  "
-                />
-              </a>
-            ))}
-          </div>
-
-          {/* ================================================= */}
-          {/* APPEARANCE / DARK MODE */}
-          {/* ================================================= */}
-
-          <div
-            className="
-              mt-5
-              flex
-              items-center
-              justify-between
-              gap-3
-              rounded-2xl
-              border
-              !border-blue-100
-              !bg-[#f8fbff]
-              px-4
-              py-3
-              shadow-sm
-              transition-all
-              duration-300
-
-              dark:!border-white/10
-              dark:!bg-white/[0.04]
-              dark:shadow-none
-            "
-          >
-            <div className="flex min-w-0 items-center gap-3">
-              <div
-                className="
-                  flex
-                  h-10
-                  w-10
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-xl
-                  !bg-blue-50
-                  !text-[#0877f9]
-                  transition-colors
-                  duration-300
-
-                  dark:!bg-[#0877f9]/15
-                  dark:!text-[#58c7ff]
-                "
-              >
-                <i className="bi bi-circle-half text-[16px]" />
-              </div>
-
-              <div className="min-w-0">
-                <p
-                  className="
-                    m-0
-                    text-[10px]
-                    font-black
-                    !text-[#071b3b]
-
-                    dark:!text-white
-                  "
-                >
-                  Appearance
-                </p>
-
-                <span
-                  className="
-                    mt-0.5
-                    block
-                    whitespace-nowrap
-                    text-[8.5px]
-                    !text-slate-500
-
-                    dark:!text-slate-400
-                  "
-                >
-                  Light / Dark Mode
-                </span>
-              </div>
+                  <i className="bi bi-arrow-right ml-auto text-[11px] opacity-50" />
+                </a>
+              ))}
             </div>
 
-            <ThemeToggle />
-          </div>
+            {/* ================================================= */}
+            {/* MOBILE CV */}
+            {/* ================================================= */}
 
-          {/* ================================================= */}
-          {/* DOWNLOAD CV */}
-          {/* ================================================= */}
-
-          <a
-            href={cv}
-            download="Aiman_Sahar_CV.pdf"
-            onClick={handleNavClick}
-            className="
-              mt-5
-              flex
-              w-full
-              items-center
-              justify-center
-              gap-3
-              rounded-xl
-              bg-gradient-to-r
-              from-[#0877f9]
-              to-[#0757c8]
-              px-5
-              py-3.5
-              text-[12px]
-              font-bold
-              !text-white
-              !no-underline
-              shadow-lg
-              shadow-blue-200
-              transition
-              duration-300
-
-              hover:-translate-y-0.5
-              hover:!text-white
-              hover:!no-underline
-
-              dark:from-[#118cff]
-              dark:to-[#0877f9]
-              dark:shadow-none
-            "
-          >
-            <span
+            <div
               className="
-                flex
-                h-7
-                w-7
-                items-center
-                justify-center
-                rounded-lg
-                !bg-white/15
+                mt-3
+                border-t
+                border-blue-100
+                pt-3
+
+                dark:border-white/10
               "
             >
-              <i className="bi bi-download text-[12px]" />
-            </span>
-
-            Download CV
-          </a>
-
-          {/* ================================================= */}
-          {/* AVAILABILITY */}
-          {/* ================================================= */}
-
-          <div
-            className="
-              mt-6
-              rounded-xl
-              border
-              !border-blue-100
-              !bg-[#f8fbff]
-              p-4
-              transition-colors
-              duration-300
-
-              dark:!border-white/10
-              dark:!bg-white/[0.04]
-            "
-          >
-            <div className="flex items-center gap-3">
-              <div
+              <a
+                href="/Aiman-Sahar-CV.pdf"
+                download
+                onClick={closeMenu}
                 className="
                   flex
-                  h-9
-                  w-9
-                  shrink-0
+                  w-full
                   items-center
                   justify-center
-                  rounded-lg
-                  !bg-green-50
-                  !text-green-500
+                  gap-2
+                  rounded-xl
+                  bg-[#071b3b]
+                  px-4
+                  py-3
 
-                  dark:!bg-green-500/10
-                  dark:!text-green-400
+                  text-[11px]
+                  font-bold
+                  !text-white
+                  !no-underline
+
+                  transition
+                  duration-300
+
+                  hover:bg-[#0877f9]
+
+                  dark:bg-[#0877f9]
+                  dark:hover:bg-[#58c7ff]
+                  dark:hover:!text-[#071b3b]
                 "
               >
-                <i className="bi bi-briefcase-fill text-[14px]" />
-              </div>
+                <i className="bi bi-download" />
 
-              <div>
-                <p
-                  className="
-                    m-0
-                    text-[10px]
-                    font-bold
-                    !text-[#071b3b]
-
-                    dark:!text-white
-                  "
-                >
-                  Available for opportunities
-                </p>
-
-                <div className="mt-1.5 flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span
-                      className="
-                        absolute
-                        h-full
-                        w-full
-                        animate-ping
-                        rounded-full
-                        bg-green-400
-                        opacity-50
-                      "
-                    />
-
-                    <span
-                      className="
-                        relative
-                        h-2
-                        w-2
-                        rounded-full
-                        bg-green-500
-                      "
-                    />
-                  </span>
-
-                  <span
-                    className="
-                      text-[9px]
-                      !text-slate-500
-
-                      dark:!text-slate-400
-                    "
-                  >
-                    Freelance • Internship • Projects
-                  </span>
-                </div>
-              </div>
+                Download CV
+              </a>
             </div>
           </div>
         </div>
-      </aside>
-    </>
+      </nav>
+    </header>
   );
 };
 
